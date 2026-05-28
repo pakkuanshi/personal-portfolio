@@ -1,0 +1,7 @@
+{
+  "/(site)/experiences/projects/page": "app/(site)/experiences/projects/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/about/page": "app/(site)/about/page.js",
+  "/(site)/skills/page": "app/(site)/skills/page.js",
+  "/(site)/experiences/professional/page": "app/(site)/experiences/professional/page.js"
+}
