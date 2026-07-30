@@ -56,28 +56,30 @@ export const skillsPageCopy: Record<
     eyebrow: "Skills",
     title: "Six fields of practice",
     description:
-      "A poster index of the categories behind Kristy's marketing, growth, analytics, web, strategy, and creative work.",
+      "A poster index of Kristy's performance marketing, analytics, search, strategy, web automation, and creative content practice.",
   },
   "zh-CN": {
     eyebrow: "技能",
     title: "六个实践领域",
     description:
-      "以作品集海报的方式呈现 Kristy 的营销、增长、分析、网站、策略与创意制作能力。",
+      "以作品集海报的方式呈现 Kristy 的广告投放、市场营销分析、SEO 增长、策略规划、网站技术与内容创作能力。",
   },
   "zh-TW": {
     eyebrow: "技能",
     title: "六個實踐領域",
     description:
-      "以作品集海報的方式呈現 Kristy 的行銷、成長、分析、網站、策略與創意製作能力。",
+      "以作品集海報的方式呈現 Kristy 的廣告投放、市場行銷分析、SEO 增長、策略規劃、網站技術與內容創作能力。",
   },
 };
 
 const categoryCopy = (
   copy: SkillCategoryCopy,
+  zhHans?: Partial<SkillCategoryCopy>,
+  zhHant?: Partial<SkillCategoryCopy>,
 ): Record<Locale, SkillCategoryCopy> => ({
   en: copy,
-  "zh-CN": copy,
-  "zh-TW": copy,
+  "zh-CN": { ...copy, ...(zhHans ?? {}) },
+  "zh-TW": { ...copy, ...((zhHant ?? zhHans) ?? {}) },
 });
 
 const skillTitle = (
@@ -96,9 +98,9 @@ export const skillCategories: SkillCategory[] = [
     number: "01",
     posterClassName: "skills-poster--paid",
     translations: categoryCopy({
-      title: "Paid Media",
-      titleLines: ["Paid", "Media"],
-      rubric: "Demand Systems",
+      title: "Performance Marketing",
+      titleLines: ["Performance", "Marketing"],
+      rubric: "Ads",
       note: "Budget, audience, and message architecture for measurable acquisition.",
       folio: "Acquisition / Testing / Scale",
       summary:
@@ -136,6 +138,14 @@ export const skillCategories: SkillCategory[] = [
             "Reading performance signals across ads, forms, pages, and funnels to improve acquisition quality.",
         },
       ],
+    }, {
+      title: "广告投放",
+      titleLines: ["广告", "投放"],
+      rubric: "广告",
+    }, {
+      title: "廣告投放",
+      titleLines: ["廣告", "投放"],
+      rubric: "廣告",
     }),
   },
   {
@@ -183,6 +193,14 @@ export const skillCategories: SkillCategory[] = [
             "Auditing UTM standards, event capture, conversion paths, and reporting consistency.",
         },
       ],
+    }, {
+      title: "市场营销分析",
+      titleLines: ["市场营销", "分析"],
+      rubric: "分析",
+    }, {
+      title: "市場行銷分析",
+      titleLines: ["市場行銷", "分析"],
+      rubric: "分析",
     }),
   },
   {
@@ -190,9 +208,9 @@ export const skillCategories: SkillCategory[] = [
     number: "03",
     posterClassName: "skills-poster--seo",
     translations: categoryCopy({
-      title: "SEO & Growth",
-      titleLines: ["SEO", "& Growth"],
-      rubric: "Organic Demand",
+      title: "Search & Growth",
+      titleLines: ["Search", "& Growth"],
+      rubric: "Search",
       note: "Search visibility, content intent, and compounding discovery loops.",
       folio: "Search / Content / CRO",
       summary:
@@ -230,6 +248,14 @@ export const skillCategories: SkillCategory[] = [
             "Reading rankings, impressions, click-through, and assisted conversion as one operating picture.",
         },
       ],
+    }, {
+      title: "SEO 与增长",
+      titleLines: ["SEO", "与增长"],
+      rubric: "搜索",
+    }, {
+      title: "SEO 與增長",
+      titleLines: ["SEO", "與增長"],
+      rubric: "搜尋",
     }),
   },
   {
@@ -237,9 +263,9 @@ export const skillCategories: SkillCategory[] = [
     number: "04",
     posterClassName: "skills-poster--research",
     translations: categoryCopy({
-      title: "Research & Strategy",
-      titleLines: ["Research", "& Strategy"],
-      rubric: "Positioning",
+      title: "Strategy & Insights",
+      titleLines: ["Strategy", "& Insights"],
+      rubric: "Strategy",
       note: "Market context, audience intelligence, and the argument behind the work.",
       folio: "Audience / Market / Narrative",
       summary:
@@ -277,6 +303,14 @@ export const skillCategories: SkillCategory[] = [
             "Turning stakeholder input into priorities, hypotheses, and operating direction.",
         },
       ],
+    }, {
+      title: "策略规划",
+      titleLines: ["策略", "规划"],
+      rubric: "策略",
+    }, {
+      title: "策略規劃",
+      titleLines: ["策略", "規劃"],
+      rubric: "策略",
     }),
   },
   {
@@ -284,9 +318,9 @@ export const skillCategories: SkillCategory[] = [
     number: "05",
     posterClassName: "skills-poster--web",
     translations: categoryCopy({
-      title: "Web & Automation",
-      titleLines: ["Web &", "Automation"],
-      rubric: "Systems",
+      title: "Web & AI Automation",
+      titleLines: ["Web & AI", "Automation"],
+      rubric: "AI",
       note: "Landing pages, workflows, and quiet infrastructure behind better marketing.",
       folio: "Pages / Forms / Flows",
       summary:
@@ -324,6 +358,14 @@ export const skillCategories: SkillCategory[] = [
             "Checking forms, links, analytics events, responsive behavior, and launch readiness.",
         },
       ],
+    }, {
+      title: "网站技术与自动化",
+      titleLines: ["网站技术", "与自动化"],
+      rubric: "自动化",
+    }, {
+      title: "網站技術與自動化",
+      titleLines: ["網站技術", "與自動化"],
+      rubric: "自動化",
     }),
   },
   {
@@ -331,9 +373,9 @@ export const skillCategories: SkillCategory[] = [
     number: "06",
     posterClassName: "skills-poster--creative",
     translations: categoryCopy({
-      title: "Creative Production",
-      titleLines: ["Creative", "Production"],
-      rubric: "Campaign Craft",
+      title: "Creative & Content",
+      titleLines: ["Creative", "& Content"],
+      rubric: "Content",
       note: "Copy, concepts, and assets shaped for attention, clarity, and brand memory.",
       folio: "Copy / Concepts / Assets",
       summary:
@@ -371,6 +413,14 @@ export const skillCategories: SkillCategory[] = [
             "Reading performance patterns to identify which messages, hooks, and formats deserve more investment.",
         },
       ],
+    }, {
+      title: "内容创作",
+      titleLines: ["内容", "创作"],
+      rubric: "内容",
+    }, {
+      title: "內容創作",
+      titleLines: ["內容", "創作"],
+      rubric: "內容",
     }),
   },
 ];
@@ -380,7 +430,11 @@ export const skills: SkillCard[] = [
     id: category.slug,
     type: "skill" as const,
     href: `/skills/${category.slug}`,
-    translations: skillTitle(category.translations.en.title),
+    translations: skillTitle(
+      category.translations.en.title,
+      category.translations["zh-CN"].title,
+      category.translations["zh-TW"].title,
+    ),
   })),
   {
     id: "more",
