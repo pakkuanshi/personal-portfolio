@@ -26,7 +26,7 @@
     --poster-hair: 24 24% 27%;
     --poster-highlight: 42 52% 88%;
     --font-sans: "Inter", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --font-serif: Canela, "Canela Text", "Canela Deck", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   }
 
   .dark {
@@ -1533,6 +1533,516 @@
     text-align: center;
   }
 
+  .skills-page-shell,
+  .skills-detail-shell {
+    background:
+      repeating-linear-gradient(
+        90deg,
+        hsl(32 18% 18% / 0.018) 0,
+        hsl(32 18% 18% / 0.018) 1px,
+        transparent 1px,
+        transparent 8px
+      ),
+      linear-gradient(180deg, hsl(39 32% 93%), hsl(37 26% 90%));
+    color: hsl(220 18% 12%);
+  }
+
+  .skills-page-intro {
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  .skills-page-masthead {
+    border-bottom: 1px solid hsl(32 15% 34% / 0.22);
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    display: grid;
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-block: clamp(2rem, 4vw, 3rem);
+  }
+
+  .skills-page-label {
+    color: hsl(220 9% 34% / 0.68);
+    display: flex;
+    font-size: 0.78rem;
+    justify-content: space-between;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .skills-page-copy {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .skills-page-copy h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 11vw, 9.5rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 0.88;
+    max-width: 9.4ch;
+    text-wrap: balance;
+  }
+
+  .skills-page-copy > p:not(.eyebrow) {
+    color: hsl(220 9% 34% / 0.76);
+    font-size: clamp(1rem, 1.5vw, 1.16rem);
+    line-height: 1.65;
+    max-width: 40rem;
+  }
+
+  .skills-page-section {
+    color: hsl(220 18% 12%);
+    padding-bottom: clamp(5rem, 8vw, 8rem);
+  }
+
+  .skills-page-poster-grid {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .skills-poster {
+    --poster-bg: hsl(42 36% 94%);
+    --poster-tilt: 1deg;
+    background: var(--poster-bg);
+    border: 1px solid hsl(34 16% 42% / 0.22);
+    border-radius: 0.12rem;
+    color: hsl(220 18% 12% / 0.9);
+    display: block;
+    min-height: clamp(24rem, 58vw, 31rem);
+    overflow: hidden;
+    position: relative;
+    transform-origin: center;
+    transition:
+      border-color 240ms ease,
+      box-shadow 240ms ease,
+      transform 240ms ease;
+  }
+
+  .skills-poster:hover,
+  .skills-poster:focus-visible {
+    border-color: hsl(32 18% 28% / 0.34);
+    box-shadow: 0 2rem 4rem hsl(30 18% 16% / 0.16);
+    outline: none;
+    transform: scale(1.018) rotate(var(--poster-tilt));
+  }
+
+  .skills-poster::before,
+  .skills-poster::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .skills-poster-number,
+  .skills-poster-rubric,
+  .skills-poster-title,
+  .skills-poster-note,
+  .skills-poster-folio {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .skills-poster-number,
+  .skills-poster-rubric,
+  .skills-poster-folio {
+    color: hsl(220 9% 34% / 0.68);
+    font-size: 0.82rem;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .skills-poster-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3.1rem, 11vw, 5.7rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 0.86;
+  }
+
+  .skills-poster-title span {
+    display: block;
+  }
+
+  .skills-poster-note {
+    color: hsl(220 9% 34% / 0.76);
+    font-size: clamp(0.92rem, 1.1vw, 1rem);
+    line-height: 1.5;
+    max-width: 18rem;
+  }
+
+  .skills-poster--paid {
+    --poster-bg: hsl(42 38% 94%);
+    --poster-tilt: -1.3deg;
+  }
+
+  .skills-poster--paid::before {
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    inset: 5.25rem 2rem auto;
+  }
+
+  .skills-poster--paid .skills-poster-number {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--paid .skills-poster-rubric {
+    right: 2rem;
+    text-align: right;
+    top: 2rem;
+  }
+
+  .skills-poster--paid .skills-poster-title {
+    bottom: 2.35rem;
+    left: 2rem;
+  }
+
+  .skills-poster--paid .skills-poster-note {
+    left: 2rem;
+    top: 44%;
+  }
+
+  .skills-poster--paid .skills-poster-folio {
+    bottom: 2.35rem;
+    right: 2rem;
+    text-align: right;
+    width: 10rem;
+  }
+
+  .skills-poster--analytics {
+    --poster-bg: hsl(52 22% 89%);
+    --poster-tilt: 1.2deg;
+  }
+
+  .skills-poster--analytics::before {
+    border-left: 1px solid hsl(32 15% 34% / 0.22);
+    inset: 2rem auto 2rem 50%;
+  }
+
+  .skills-poster--analytics .skills-poster-number {
+    right: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--analytics .skills-poster-rubric {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--analytics .skills-poster-title {
+    inset: 50% 2rem auto;
+    text-align: center;
+    transform: translateY(-50%);
+  }
+
+  .skills-poster--analytics .skills-poster-note {
+    bottom: 2rem;
+    right: 2rem;
+    text-align: right;
+  }
+
+  .skills-poster--analytics .skills-poster-folio {
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .skills-poster--seo {
+    --poster-bg: hsl(84 22% 88%);
+    --poster-tilt: -1.1deg;
+  }
+
+  .skills-poster--seo::before {
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    inset: 2rem 2rem auto auto;
+    width: 7rem;
+  }
+
+  .skills-poster--seo::after {
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    inset: auto auto 2rem 2rem;
+    width: 8rem;
+  }
+
+  .skills-poster--seo .skills-poster-number {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--seo .skills-poster-rubric {
+    bottom: 2rem;
+    right: 2rem;
+    text-align: right;
+  }
+
+  .skills-poster--seo .skills-poster-title {
+    right: 2rem;
+    text-align: right;
+    top: 6rem;
+  }
+
+  .skills-poster--seo .skills-poster-note {
+    bottom: 5rem;
+    left: 2rem;
+  }
+
+  .skills-poster--seo .skills-poster-folio {
+    right: 11rem;
+    top: 2rem;
+  }
+
+  .skills-poster--research {
+    --poster-bg: hsl(35 52% 90%);
+    --poster-tilt: 1.4deg;
+  }
+
+  .skills-poster--research::before {
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    inset: auto 2rem 6.5rem;
+  }
+
+  .skills-poster--research .skills-poster-number {
+    bottom: 1rem;
+    color: hsl(220 18% 12% / 0.12);
+    font-size: clamp(5.4rem, 13vw, 7.5rem);
+    line-height: 0.8;
+    right: 1.5rem;
+  }
+
+  .skills-poster--research .skills-poster-rubric {
+    right: 2rem;
+    text-align: right;
+    top: 2rem;
+  }
+
+  .skills-poster--research .skills-poster-title {
+    left: 2rem;
+    top: 6.25rem;
+  }
+
+  .skills-poster--research .skills-poster-note {
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .skills-poster--research .skills-poster-folio {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--web {
+    --poster-bg: hsl(42 34% 93%);
+    --poster-tilt: -1.5deg;
+  }
+
+  .skills-poster--web::before {
+    border-left: 1px solid hsl(32 15% 34% / 0.22);
+    inset: 2rem 2rem 2rem auto;
+  }
+
+  .skills-poster--web .skills-poster-number {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--web .skills-poster-rubric {
+    right: 2rem;
+    text-align: right;
+    top: 2rem;
+  }
+
+  .skills-poster--web .skills-poster-title {
+    bottom: 6rem;
+    right: 2rem;
+    text-align: right;
+  }
+
+  .skills-poster--web .skills-poster-note {
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .skills-poster--web .skills-poster-folio {
+    left: 2rem;
+    top: 7rem;
+  }
+
+  .skills-poster--creative {
+    --poster-bg: hsl(18 36% 89%);
+    --poster-tilt: 1.1deg;
+  }
+
+  .skills-poster--creative::before {
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    inset: 50% 2rem auto;
+  }
+
+  .skills-poster--creative::after {
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    inset: auto 2rem 6.5rem;
+  }
+
+  .skills-poster--creative .skills-poster-number {
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+  }
+
+  .skills-poster--creative .skills-poster-rubric {
+    right: 2rem;
+    text-align: right;
+    top: 2rem;
+  }
+
+  .skills-poster--creative .skills-poster-title {
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    text-align: center;
+  }
+
+  .skills-poster--creative .skills-poster-note {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .skills-poster--creative .skills-poster-folio {
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .skills-detail-main {
+    padding-bottom: clamp(5rem, 8vw, 8rem);
+    padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  .skills-detail-nav {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .skills-detail-nav a,
+  .skills-detail-nav span,
+  .skills-detail-kicker,
+  .skills-detail-section-heading span,
+  .skills-detail-footer span {
+    color: hsl(220 9% 34% / 0.68);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .skills-detail-nav a,
+  .skills-detail-footer a {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .skills-detail-hero {
+    border-bottom: 1px solid hsl(32 15% 34% / 0.22);
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .skills-detail-number {
+    color: hsl(220 9% 34% / 0.62);
+    font-family: var(--font-serif);
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 0.85;
+  }
+
+  .skills-detail-kicker {
+    margin-bottom: 1rem;
+  }
+
+  .skills-detail-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 0.88;
+    max-width: 10ch;
+    text-wrap: balance;
+  }
+
+  .skills-detail-summary {
+    color: hsl(220 9% 34% / 0.76);
+    font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    max-width: 42rem;
+  }
+
+  .skills-detail-ledger {
+    padding-block: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .skills-detail-section-heading {
+    align-items: end;
+    border-bottom: 1px solid hsl(32 15% 34% / 0.22);
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+
+  .skills-detail-section-heading h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .skills-detail-rows {
+    display: grid;
+  }
+
+  .skills-detail-row {
+    border-bottom: 1px solid hsl(32 15% 34% / 0.18);
+    display: grid;
+    gap: 0.8rem 1rem;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    padding-block: 1.35rem;
+  }
+
+  .skills-detail-row > span {
+    color: hsl(220 9% 34% / 0.62);
+    font-size: 0.82rem;
+  }
+
+  .skills-detail-row h3 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+    font-weight: 500;
+    line-height: 1.05;
+  }
+
+  .skills-detail-row p {
+    color: hsl(220 9% 34% / 0.76);
+    grid-column: 2;
+    line-height: 1.62;
+    max-width: 42rem;
+  }
+
+  .skills-detail-footer {
+    align-items: center;
+    border-top: 1px solid hsl(32 15% 34% / 0.22);
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .skills-detail-footer a {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1;
+  }
+
   .dark .skills-preview-section {
     background:
       linear-gradient(180deg, hsl(28 14% 12%), hsl(30 13% 10%));
@@ -1575,10 +2085,140 @@
   .dark .skills-page-card-title {
     color: hsl(42 28% 90% / 0.9);
   }
+
+  .dark .skills-page-shell,
+  .dark .skills-detail-shell {
+    background:
+      repeating-linear-gradient(
+        90deg,
+        hsl(42 26% 90% / 0.018) 0,
+        hsl(42 26% 90% / 0.018) 1px,
+        transparent 1px,
+        transparent 8px
+      ),
+      linear-gradient(180deg, hsl(30 13% 10%), hsl(28 14% 12%));
+    color: hsl(42 28% 90%);
+  }
+
+  .dark .skills-page-masthead,
+  .dark .skills-detail-hero,
+  .dark .skills-detail-section-heading,
+  .dark .skills-detail-footer {
+    border-color: hsl(38 18% 58% / 0.18);
+  }
+
+  .dark .skills-page-label,
+  .dark .skills-page-copy > p:not(.eyebrow),
+  .dark .skills-poster-number,
+  .dark .skills-poster-rubric,
+  .dark .skills-poster-folio,
+  .dark .skills-poster-note,
+  .dark .skills-detail-nav a,
+  .dark .skills-detail-nav span,
+  .dark .skills-detail-kicker,
+  .dark .skills-detail-summary,
+  .dark .skills-detail-section-heading span,
+  .dark .skills-detail-footer span,
+  .dark .skills-detail-row > span,
+  .dark .skills-detail-row p {
+    color: hsl(42 18% 82% / 0.68);
+  }
+
+  .dark .skills-page-copy h1,
+  .dark .skills-detail-hero h1,
+  .dark .skills-detail-section-heading h2,
+  .dark .skills-detail-row h3,
+  .dark .skills-detail-footer a {
+    color: hsl(42 28% 90% / 0.92);
+  }
+
+  .dark .skills-poster {
+    border-color: hsl(38 18% 58% / 0.18);
+    color: hsl(220 18% 12% / 0.9);
+  }
+
+  .dark .skills-poster:hover,
+  .dark .skills-poster:focus-visible {
+    border-color: hsl(38 20% 70% / 0.36);
+    box-shadow: 0 2rem 4rem hsl(30 18% 3% / 0.32);
+  }
+
+  .dark .skills-detail-row {
+    border-color: hsl(38 18% 58% / 0.14);
+  }
 }
 
 @media (min-width: 1024px) {
   @layer components {
+    .skills-page-masthead {
+      grid-template-columns: 12rem minmax(0, 1fr);
+    }
+
+    .skills-page-label {
+      align-content: space-between;
+      display: grid;
+      min-height: 18rem;
+    }
+
+    .skills-page-poster-grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .skills-poster--paid {
+      grid-column: span 5;
+      min-height: 42rem;
+    }
+
+    .skills-poster--analytics {
+      grid-column: span 7;
+      min-height: 28rem;
+    }
+
+    .skills-poster--seo,
+    .skills-poster--research,
+    .skills-poster--web {
+      grid-column: span 4;
+      min-height: 34rem;
+    }
+
+    .skills-poster--creative {
+      grid-column: 2 / span 10;
+      min-height: 28rem;
+    }
+
+    .skills-poster--paid .skills-poster-title {
+      font-size: clamp(5.6rem, 7vw, 6.8rem);
+    }
+
+    .skills-poster--analytics .skills-poster-title {
+      font-size: clamp(4.8rem, 5.8vw, 5.8rem);
+    }
+
+    .skills-poster--seo .skills-poster-title,
+    .skills-poster--research .skills-poster-title,
+    .skills-poster--web .skills-poster-title {
+      font-size: clamp(4.2rem, 4.8vw, 5rem);
+    }
+
+    .skills-poster--creative .skills-poster-title {
+      font-size: clamp(4.8rem, 6vw, 6rem);
+    }
+
+    .skills-detail-hero {
+      grid-template-columns: 12rem minmax(0, 1fr);
+    }
+
+    .skills-detail-row {
+      align-items: baseline;
+      gap: 2rem;
+      grid-template-columns: 5rem minmax(14rem, 0.8fr) minmax(20rem, 1.2fr);
+      padding-block: 1.5rem;
+    }
+
+    .skills-detail-row p {
+      grid-column: auto;
+    }
+
     .poster-hero,
     .poster-stage {
       min-height: calc(100svh - 3.25rem);
@@ -1622,17 +2262,50 @@
 
 @media (min-width: 768px) {
   @layer components {
-    .skills-preview-grid,
-    .skills-page-list {
+    .skills-preview-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skills-page-poster-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .skills-poster {
+      min-height: 31rem;
+    }
+
+    .skills-poster--paid,
+    .skills-poster--analytics {
+      grid-column: span 3;
+    }
+
+    .skills-poster--seo,
+    .skills-poster--research,
+    .skills-poster--web {
+      grid-column: span 2;
+    }
+
+    .skills-poster--creative {
+      grid-column: span 6;
+      min-height: 25rem;
+    }
+
+    .skills-poster--web .skills-poster-rubric {
+      right: 1.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+    }
+
+    .skills-detail-hero {
+      grid-template-columns: 8rem minmax(0, 1fr);
     }
   }
 }
 
 @media (min-width: 1180px) {
   @layer components {
-    .skills-preview-grid,
-    .skills-page-list {
+    .skills-preview-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
@@ -1725,8 +2398,42 @@
       font-size: 1.08rem;
     }
 
-    .skills-page-card {
-      grid-template-columns: 1fr;
+    .skills-poster {
+      min-height: 24rem;
+    }
+
+    .skills-poster-number,
+    .skills-poster-rubric,
+    .skills-poster-folio {
+      font-size: 0.76rem;
+    }
+
+    .skills-poster-title {
+      font-size: clamp(2.8rem, 14vw, 4rem);
+    }
+
+    .skills-poster--paid .skills-poster-folio,
+    .skills-poster--seo .skills-poster-folio,
+    .skills-poster--creative .skills-poster-folio {
+      display: none;
+    }
+
+    .skills-poster--analytics .skills-poster-title,
+    .skills-poster--creative .skills-poster-title {
+      text-align: left;
+    }
+
+    .skills-poster--analytics .skills-poster-note {
+      left: 2rem;
+      right: auto;
+      text-align: left;
+    }
+
+    .skills-detail-section-heading,
+    .skills-detail-footer {
+      align-items: start;
+      display: grid;
+      gap: 0.75rem;
     }
 
     .about-preview-inner {

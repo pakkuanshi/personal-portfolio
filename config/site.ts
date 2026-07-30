@@ -1,7 +1,7 @@
 import type { SiteConfig } from "@/types/site";
 
 export const siteConfig: SiteConfig = {
-  name: "Your Name",
+  name: "Kristy Shi",
   role: "Marketing & Strategic Communication",
   email: "hello@example.com",
   navigation: [

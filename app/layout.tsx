@@ -5,13 +5,31 @@ import { PreferencesProvider } from "@/components/preferences/preferences-provid
 
 import "./globals.css";
 
+const siteDescription =
+  "A strategic communication and marketing portfolio built for long-term personal brand growth.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kristyshi.com"),
   title: {
-    default: "Personal Portfolio",
-    template: "%s | Personal Portfolio",
+    default: "Kristy Shi Portfolio",
+    template: "%s | Kristy Shi",
   },
-  description:
-    "A strategic communication and marketing portfolio built for long-term personal brand growth.",
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Kristy Shi Portfolio",
+    description: siteDescription,
+    url: "/",
+    siteName: "Kristy Shi",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Kristy Shi Portfolio",
+    description: siteDescription,
+  },
 };
 
 type RootLayoutProps = {
