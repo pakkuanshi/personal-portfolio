@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
 import { usePreferences } from "@/components/preferences/preferences-provider";
-import { skillCategories, skillsPageCopy } from "@/content/skills";
+import { SkillCategoryGrid } from "@/components/skills/skill-category-grid";
+import { skillsPageCopy } from "@/content/skills";
 
 export function SkillsPageContent() {
   const { locale } = usePreferences();
@@ -26,30 +25,7 @@ export function SkillsPageContent() {
       </header>
 
       <section className="site-container skills-page-section" aria-label="Skill categories">
-        <div className="skills-page-poster-grid">
-          {skillCategories.map((category) => {
-            const copy = category.translations[locale];
-
-            return (
-              <Link
-                aria-label={`Open ${copy.title} skills`}
-                className={`skills-poster ${category.posterClassName}`}
-                href={`/skills/${category.slug}`}
-                key={category.slug}
-              >
-                <span className="skills-poster-number">{category.number}</span>
-                <span className="skills-poster-rubric">{copy.rubric}</span>
-                <h2 className="skills-poster-title">
-                  {copy.titleLines.map((line) => (
-                    <span key={line}>{line}</span>
-                  ))}
-                </h2>
-                <p className="skills-poster-note">{copy.note}</p>
-                <span className="skills-poster-folio">{copy.folio}</span>
-              </Link>
-            );
-          })}
-        </div>
+        <SkillCategoryGrid />
       </section>
     </div>
   );
