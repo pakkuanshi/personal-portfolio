@@ -59,8 +59,8 @@ export function SkillDetailPageContent({ slug }: SkillDetailPageContentProps) {
     copy.capabilitiesDescription ?? pageCopy.capabilitiesDescription;
   const hasTools = copy.tools.length > 0;
   const hasCapabilities = copy.details.length > 0;
-  const primaryGridClassName = copy.toolsTitle
-    ? "mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+  const primaryGridClassName = copy.toolsTitle || copy.tools.length === 3
+    ? "mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
     : "mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4";
 
   return (
@@ -115,9 +115,16 @@ export function SkillDetailPageContent({ slug }: SkillDetailPageContentProps) {
                     key={tool.name}
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-serif text-[1.35rem] font-medium leading-tight tracking-normal text-[hsl(220_18%_14%/0.9)] dark:text-[hsl(42_31%_88%/0.9)]">
-                        {tool.name}
-                      </h3>
+                      <div className="min-w-0">
+                        <h3 className="font-serif text-[1.35rem] font-medium leading-tight tracking-normal text-[hsl(220_18%_14%/0.9)] dark:text-[hsl(42_31%_88%/0.9)]">
+                          {tool.name}
+                        </h3>
+                        {tool.meta ? (
+                          <p className="mt-2 text-xs leading-4 text-[hsl(220_9%_34%/0.5)] dark:text-[hsl(42_18%_82%/0.48)]">
+                            {tool.meta}
+                          </p>
+                        ) : null}
+                      </div>
                       {Icon ? (
                         <Icon
                           aria-hidden="true"

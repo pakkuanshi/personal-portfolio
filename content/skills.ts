@@ -32,6 +32,7 @@ export type SkillToolIcon =
 
 export type SkillTool = {
   name: string;
+  meta?: string;
   description: string;
   icon?: SkillToolIcon;
 };
@@ -871,15 +872,16 @@ export const skillCategories: SkillCategory[] = [
           icon: "web",
         },
         {
-          name: "Cursor",
+          name: "Python",
           description:
-            "AI-assisted workspace for drafting, revising, and organizing marketing workflow outputs.",
+            "Lightweight scripting for automation, data handling, and repeatable marketing workflow support.",
           icon: "automation",
         },
         {
-          name: "Claude Code",
+          name: "AI Coding Assistants",
+          meta: "Cursor · Claude Code · Codex · etc.",
           description:
-            "Structured AI coding support for prompt iteration, workflow setup, and technical problem solving.",
+            "Use AI coding assistants to accelerate development, automate repetitive tasks, and improve workflow efficiency.",
           icon: "automation",
         },
       ],
@@ -917,15 +919,16 @@ export const skillCategories: SkillCategory[] = [
           icon: "web",
         },
         {
-          name: "Cursor",
+          name: "Python",
           description:
-            "用于 AI 辅助的草稿整理、内容修订与营销工作流输出。",
+            "用于轻量脚本、自动化、数据处理与可重复的营销工作流支持。",
           icon: "automation",
         },
         {
-          name: "Claude Code",
+          name: "AI 编程助手",
+          meta: "Cursor · Claude Code · Codex · etc.",
           description:
-            "用于结构化 AI 编码支持、提示词迭代、流程搭建与技术问题拆解。",
+            "使用 Cursor、Claude Code、Codex 等 AI 编程助手，加速开发、自动化重复任务并提升工作流效率。",
           icon: "automation",
         },
       ],
@@ -963,15 +966,16 @@ export const skillCategories: SkillCategory[] = [
           icon: "web",
         },
         {
-          name: "Cursor",
+          name: "Python",
           description:
-            "用於 AI 輔助的草稿整理、內容修訂與行銷工作流輸出。",
+            "用於輕量腳本、自動化、資料處理與可重複的行銷工作流支持。",
           icon: "automation",
         },
         {
-          name: "Claude Code",
+          name: "AI 編程助手",
+          meta: "Cursor · Claude Code · Codex · etc.",
           description:
-            "用於結構化 AI 編碼支持、提示詞迭代、流程搭建與技術問題拆解。",
+            "使用 Cursor、Claude Code、Codex 等 AI 編程助手，加速開發、自動化重複任務並提升工作流效率。",
           icon: "automation",
         },
       ],
