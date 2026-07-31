@@ -1,5 +1,4 @@
 import type { Locale } from "@/types/preferences";
-import { RESUME_PDF_PATH } from "@/lib/resume-assets";
 
 type AboutInfoBlock = {
   label: string;
@@ -14,25 +13,6 @@ type AboutContent = {
   introLines: string[];
   portraitAlt: string;
   portraitImage: string;
-  resumeCta: string;
-  resumeHref: string;
-  resumeRequest: {
-    title: string;
-    description: string;
-    firstNameLabel: string;
-    firstNamePlaceholder: string;
-    lastNameLabel: string;
-    lastNamePlaceholder: string;
-    emailLabel: string;
-    emailPlaceholder: string;
-    submitLabel: string;
-    loadingLabel: string;
-    successMessage: string;
-    successDetail: string;
-    invalidEmailMessage: string;
-    errorMessage: string;
-    closeLabel: string;
-  };
   infoBlocks: AboutInfoBlock[];
 };
 
@@ -43,26 +23,6 @@ const enAboutContent: AboutContent = {
   ],
   portraitAlt: "Editorial portrait of Kristy Shi",
   portraitImage: "/images/about-portrait.jpg",
-  resumeCta: "View Resume",
-  resumeHref: RESUME_PDF_PATH,
-  resumeRequest: {
-    title: "View My Resume",
-    description:
-      "Enter your email below to receive a copy of my resume. A PDF will also open automatically after submission.",
-    firstNameLabel: "First Name",
-    firstNamePlaceholder: "Optional",
-    lastNameLabel: "Last Name",
-    lastNamePlaceholder: "Optional",
-    emailLabel: "Email Address",
-    emailPlaceholder: "Email address",
-    submitLabel: "Send & View Resume",
-    loadingLabel: "Sending...",
-    successMessage: "✓ Resume sent successfully.",
-    successDetail: "Check your inbox for a copy of my resume.",
-    invalidEmailMessage: "Please enter a valid email address.",
-    errorMessage: "Something went wrong. Please try again.",
-    closeLabel: "Close",
-  },
   infoBlocks: [
     {
       label: "EDUCATION",
@@ -97,25 +57,6 @@ const zhHansAboutContent: AboutContent = {
   ],
   portraitAlt: "Kristy Shi 的编辑风格肖像",
   portraitImage: "/images/about-portrait.jpg",
-  resumeCta: "获取简历",
-  resumeHref: RESUME_PDF_PATH,
-  resumeRequest: {
-    title: "查看我的简历",
-    description: "输入邮箱后，我会将简历发送给你；提交成功后也会自动打开 PDF。",
-    firstNameLabel: "名字",
-    firstNamePlaceholder: "选填",
-    lastNameLabel: "姓氏",
-    lastNamePlaceholder: "选填",
-    emailLabel: "邮箱地址",
-    emailPlaceholder: "邮箱地址",
-    submitLabel: "发送并查看简历",
-    loadingLabel: "发送中...",
-    successMessage: "✓ 简历已发送成功。",
-    successDetail: "请查看你的邮箱，获取一份简历副本。",
-    invalidEmailMessage: "请输入有效的邮箱地址。",
-    errorMessage: "Something went wrong. Please try again.",
-    closeLabel: "关闭",
-  },
   infoBlocks: [
     {
       label: "教育背景",
@@ -147,25 +88,6 @@ const zhHantAboutContent: AboutContent = {
   ],
   portraitAlt: "Kristy Shi 的編輯風格肖像",
   portraitImage: "/images/about-portrait.jpg",
-  resumeCta: "獲取簡歷",
-  resumeHref: RESUME_PDF_PATH,
-  resumeRequest: {
-    title: "查看我的簡歷",
-    description: "輸入信箱後，我會將簡歷發送給你；提交成功後也會自動打開 PDF。",
-    firstNameLabel: "名字",
-    firstNamePlaceholder: "選填",
-    lastNameLabel: "姓氏",
-    lastNamePlaceholder: "選填",
-    emailLabel: "信箱地址",
-    emailPlaceholder: "信箱地址",
-    submitLabel: "發送並查看簡歷",
-    loadingLabel: "發送中...",
-    successMessage: "✓ 簡歷已發送成功。",
-    successDetail: "請查看你的信箱，獲取一份簡歷副本。",
-    invalidEmailMessage: "請輸入有效的信箱地址。",
-    errorMessage: "Something went wrong. Please try again.",
-    closeLabel: "關閉",
-  },
   infoBlocks: [
     {
       label: "教育背景",
