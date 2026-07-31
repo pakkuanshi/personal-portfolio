@@ -9,22 +9,17 @@ export function SkillsPageContent() {
   const pageCopy = skillsPageCopy[locale];
 
   return (
-    <div className="skills-page-shell">
-      <header className="site-container skills-page-intro">
-        <div className="skills-page-masthead">
-          <div className="skills-page-label">
-            <span>Kristy Shi</span>
-            <span>{pageCopy.eyebrow}</span>
-          </div>
-          <div className="skills-page-copy">
-            <p className="eyebrow">{pageCopy.eyebrow}</p>
-            <h1>{pageCopy.title}</h1>
-            <p>{pageCopy.description}</p>
-          </div>
-        </div>
+    <div className="min-h-[calc(100vh-3.25rem)] bg-[hsl(40_25%_97%)] pb-20 pt-28 transition-colors duration-300 dark:bg-[linear-gradient(180deg,hsl(25_25%_10%),hsl(20_26%_8%))] md:pb-24 md:pt-32">
+      <header className="site-container">
+        <h1 className="experience-polaroid-title">
+          {pageCopy.eyebrow}
+        </h1>
       </header>
 
-      <section className="site-container skills-page-section" aria-label="Skill categories">
+      <section
+        aria-label={pageCopy.eyebrow}
+        className="site-container mt-12 sm:mt-14 lg:mt-16"
+      >
         <SkillCategoryGrid />
       </section>
     </div>
