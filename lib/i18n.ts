@@ -17,7 +17,7 @@ export const dictionary = {
       name: "Kristy Shi",
       role: "Marketing & Strategic Communication",
       footer:
-        "A long-term personal brand portfolio for marketing, strategy, and communication work.",
+        "Exploring the intersection of marketing, analytics, and digital experiences.",
       nav: {
         home: "Home",
         experiences: "Experiences",
@@ -154,7 +154,7 @@ export const dictionary = {
     site: {
       name: "Kristy Shi",
       role: "市场营销与战略传播",
-      footer: "一个面向长期个人品牌建设的营销、策略与传播作品集。",
+      footer: "探索市场营销、数据分析与数字体验的交汇。",
       nav: {
         home: "首页",
         experiences: "经历",
@@ -280,7 +280,7 @@ export const dictionary = {
     site: {
       name: "Kristy Shi",
       role: "行銷與策略傳播",
-      footer: "一個面向長期個人品牌建設的行銷、策略與傳播作品集。",
+      footer: "探索行銷、數據分析與數位體驗的交會。",
       nav: {
         home: "首頁",
         experiences: "經歷",
