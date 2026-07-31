@@ -47,7 +47,7 @@ export const experienceIndexContent: Record<Locale, ExperienceIndexContent> = {
       professional: {
         key: "professional",
         title: "Professional Experiences",
-        subtitle: "Selected roles across SEO, media planning, and brand promotion.",
+        subtitle: "Experience across growth, analytics, paid media, and digital strategy.",
         href: "/experiences/professional",
         summaryItems: [
           "Lovart",
@@ -150,7 +150,7 @@ export const experienceIndexContent: Record<Locale, ExperienceIndexContent> = {
       professional: {
         key: "professional",
         title: "专业经历",
-        subtitle: "围绕 SEO、媒介策划与品牌推广的精选经历。",
+        subtitle: "涵盖增长、分析、付费媒体与数字策略的经历。",
         href: "/experiences/professional",
         summaryItems: ["Lovart", "阳狮集团｜万豪酒店", "上海广播电视台｜第一财经"],
         items: [
@@ -243,7 +243,7 @@ export const experienceIndexContent: Record<Locale, ExperienceIndexContent> = {
       professional: {
         key: "professional",
         title: "專業經歷",
-        subtitle: "圍繞 SEO、媒體策劃與品牌推廣的精選經歷。",
+        subtitle: "涵蓋增長、分析、付費媒體與數位策略的經歷。",
         href: "/experiences/professional",
         summaryItems: ["Lovart", "陽獅集團｜萬豪酒店", "上海廣播電視台｜第一財經"],
         items: [
