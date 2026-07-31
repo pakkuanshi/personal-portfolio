@@ -7,15 +7,31 @@ import {
   experienceIndexContent,
 } from "@/content/experience-index";
 import { usePreferences } from "@/components/preferences/preferences-provider";
+import type { Locale } from "@/types/preferences";
 
 type ExperiencesListContentProps = {
   categoryKey: ExperienceCategoryKey;
 };
 
 const indexCardBackgrounds = [
-  "bg-[hsl(42_33%_94%/0.92)] dark:bg-[hsl(32_13%_16%/0.84)]",
-  "bg-[hsl(48_25%_92%/0.9)] dark:bg-[hsl(34_12%_17%/0.84)]",
+  "bg-[hsl(42_31%_94%/0.86)] dark:bg-[hsl(32_13%_16%/0.78)]",
+  "bg-[hsl(48_24%_93%/0.84)] dark:bg-[hsl(34_12%_17%/0.78)]",
 ];
+
+const indexCardLabels: Record<Locale, Record<ExperienceCategoryKey, string>> = {
+  en: {
+    professional: "Professional",
+    projects: "Projects",
+  },
+  "zh-CN": {
+    professional: "专业经历",
+    projects: "项目",
+  },
+  "zh-TW": {
+    professional: "專業經歷",
+    projects: "項目",
+  },
+};
 
 export function ExperiencesIndexContent() {
   const { locale } = usePreferences();
@@ -34,9 +50,9 @@ export function ExperiencesIndexContent() {
 
       <section
         aria-label={copy.eyebrow}
-        className="site-container mt-12 sm:mt-14 lg:mt-16"
+        className="site-container mt-8 sm:mt-10 lg:mt-12"
       >
-        <div className="mx-auto grid w-full max-w-[592px] grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
           {selectors.map((selector, index) => {
             const titleLines =
               locale === "en" && selector.key === "professional"
@@ -44,20 +60,34 @@ export function ExperiencesIndexContent() {
                 : [selector.title];
             const background =
               indexCardBackgrounds[index] ?? indexCardBackgrounds[0];
+            const number = String(index + 1).padStart(2, "0");
+            const label = indexCardLabels[locale][selector.key];
 
             return (
               <Link
-                className={`group relative min-h-[13.25rem] overflow-hidden border border-[hsl(34_18%_68%/0.34)] p-6 text-[hsl(220_18%_12%/0.9)] shadow-[0_12px_28px_hsl(30_18%_28%/0.045)] transition duration-200 ease-out sm:aspect-[1.16/1] sm:min-h-0 lg:aspect-[1.22/1] ${background} hover:-translate-y-1 hover:border-[hsl(28_24%_52%/0.4)] hover:shadow-[0_18px_34px_hsl(30_18%_24%/0.1)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[hsl(28_24%_52%/0.45)] dark:border-[hsl(38_18%_58%/0.2)] dark:text-[hsl(42_28%_90%/0.9)] dark:hover:border-[hsl(38_22%_68%/0.3)] dark:hover:shadow-[0_18px_34px_hsl(24_12%_4%/0.26)]`}
+                className={`group relative aspect-[1.72/1] min-h-[11.75rem] overflow-hidden border border-[hsl(34_18%_68%/0.34)] p-6 text-[hsl(220_18%_12%/0.9)] transition-colors duration-200 ease-out sm:aspect-[1.85/1] md:min-h-[15rem] lg:aspect-[1.92/1] lg:min-h-[16.5rem] ${background} hover:border-[hsl(28_24%_52%/0.42)] hover:bg-[hsl(42_35%_96%/0.82)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[hsl(28_24%_52%/0.45)] dark:border-[hsl(38_18%_58%/0.2)] dark:text-[hsl(42_28%_90%/0.9)] dark:hover:border-[hsl(38_22%_68%/0.32)] dark:hover:bg-[hsl(30_13%_19%/0.78)]`}
                 href={selector.href}
                 key={selector.key}
               >
-                <h2 className="absolute bottom-6 left-6 right-8 font-serif text-[clamp(2.05rem,2.35vw,2.45rem)] font-medium leading-[0.94] tracking-normal text-balance">
+                <span className="absolute left-6 top-6 text-xs uppercase leading-none text-[hsl(220_9%_34%/0.58)] dark:text-[hsl(42_18%_82%/0.58)]">
+                  {number}
+                </span>
+                <span className="absolute right-6 top-6 max-w-[9rem] text-right text-xs uppercase leading-none text-[hsl(220_9%_34%/0.58)] dark:text-[hsl(42_18%_82%/0.58)]">
+                  {label}
+                </span>
+                <h2 className="absolute bottom-6 left-6 right-16 font-serif text-[clamp(2.05rem,3.2vw,3rem)] font-medium leading-[0.94] tracking-normal text-balance">
                   {titleLines.map((line) => (
                     <span className="block" key={line}>
                       {line}
                     </span>
                   ))}
                 </h2>
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-6 right-6 text-2xl leading-none text-[hsl(220_9%_34%/0.58)] transition-transform duration-200 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 dark:text-[hsl(42_18%_82%/0.58)]"
+                >
+                  ↗
+                </span>
               </Link>
             );
           })}
