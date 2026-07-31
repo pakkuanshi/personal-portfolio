@@ -43,6 +43,10 @@ export type SkillCategoryCopy = {
   note: string;
   folio: string;
   summary: string;
+  toolsTitle?: string;
+  toolsDescription?: string;
+  capabilitiesTitle?: string;
+  capabilitiesDescription?: string;
   tools: SkillTool[];
   detailKicker: string;
   details: SkillDetail[];
@@ -73,21 +77,21 @@ export const skillsPageCopy: Record<
 > = {
   en: {
     eyebrow: "Skills",
-    title: "Six fields of practice",
+    title: "Six marketing capability fields",
     description:
-      "A poster index of Kristy's performance marketing, analytics, search, strategy, web automation, and creative content practice.",
+      "A poster index of Kristy's marketing, analytics, growth, strategy, technical, and creative practice.",
   },
   "zh-CN": {
     eyebrow: "技能",
-    title: "六个实践领域",
+    title: "六个营销能力领域",
     description:
-      "以作品集海报的方式呈现 Kristy 的广告投放、市场营销分析、SEO 增长、策略规划、网站技术与内容创作能力。",
+      "以作品集海报的方式呈现 Kristy 的广告投放、市场营销分析、增长策略、AI 技术与内容创作能力。",
   },
   "zh-TW": {
     eyebrow: "技能",
-    title: "六個實踐領域",
+    title: "六個行銷能力領域",
     description:
-      "以作品集海報的方式呈現 Kristy 的廣告投放、市場行銷分析、SEO 增長、策略規劃、網站技術與內容創作能力。",
+      "以作品集海報的方式呈現 Kristy 的廣告投放、市場行銷分析、成長策略、AI 技術與內容創作能力。",
   },
 };
 
@@ -105,28 +109,28 @@ export const skillsDetailPageCopy: Record<
     backLabel: "Skills Index",
     toolsTitle: "Core Tools",
     toolsDescription:
-      "The platforms, systems, and working tools I use to turn strategy into practical execution.",
-    capabilitiesTitle: "What I Do",
+      "The platforms and working tools I use to turn marketing strategy into practical execution.",
+    capabilitiesTitle: "Capabilities",
     capabilitiesDescription:
-      "The practical capabilities behind this area of work, from planning and setup to analysis and refinement.",
+      "The practical marketing and analytical work behind this capability area.",
   },
   "zh-CN": {
     backLabel: "技能索引",
     toolsTitle: "核心工具",
     toolsDescription:
-      "我用来把策略转化为实际执行的平台、系统与工作工具。",
-    capabilitiesTitle: "我能做什么",
+      "我用来把营销策略转化为实际执行的平台与工作工具。",
+    capabilitiesTitle: "能力范围",
     capabilitiesDescription:
-      "这个能力领域中的实际工作内容，从规划、搭建到分析与优化。",
+      "这个能力领域中实际承担的营销、分析与优化工作。",
   },
   "zh-TW": {
     backLabel: "技能索引",
     toolsTitle: "核心工具",
     toolsDescription:
-      "我用來把策略轉化為實際執行的平台、系統與工作工具。",
-    capabilitiesTitle: "我能做什麼",
+      "我用來把行銷策略轉化為實際執行的平台與工作工具。",
+    capabilitiesTitle: "能力範圍",
     capabilitiesDescription:
-      "這個能力領域中的實際工作內容，從規劃、搭建到分析與優化。",
+      "這個能力領域中實際承擔的行銷、分析與優化工作。",
   },
 };
 
@@ -158,29 +162,29 @@ export const skillCategories: SkillCategory[] = [
     translations: categoryCopy({
       title: "Performance Marketing",
       titleLines: ["Performance", "Marketing"],
-      rubric: "Ads",
-      note: "Budget, audience, and message architecture for measurable acquisition.",
-      folio: "Acquisition / Testing / Scale",
+      rubric: "Paid",
+      note: "Paid acquisition shaped by goals, audience, budget, and reporting discipline.",
+      folio: "Campaigns / Testing / Reporting",
       summary:
-        "Performance marketing is the paid acquisition practice behind campaigns that need clear targeting, measurable spend, and accountable conversion paths. I use it to connect audience strategy with channel setup, testing, and performance analysis.",
+        "Performance marketing connects channel setup, audience logic, budget control, and reporting so paid campaigns can be planned, tested, and improved with accountability.",
       tools: [
         {
           name: "Google Ads",
           description:
-            "Search campaign management, keyword optimization, and performance measurement.",
+            "Search campaign setup, keyword management, and conversion-focused performance review.",
           icon: "advertising",
         },
         {
           name: "Meta Ads",
           description:
-            "Paid social audience testing, creative iteration, and conversion-focused campaign setup.",
+            "Paid social campaign setup, audience testing, and creative performance review.",
           icon: "advertising",
         },
         {
-          name: "YouTube Ads",
+          name: "TikTok Ads",
           description:
-            "Video campaign planning, audience reach, and performance review across awareness and conversion goals.",
-          icon: "content",
+            "Short-form paid media testing, audience reach, and campaign performance tracking.",
+          icon: "advertising",
         },
         {
           name: "Google Analytics",
@@ -189,65 +193,65 @@ export const skillCategories: SkillCategory[] = [
           icon: "analytics",
         },
       ],
-      detailKicker: "Acquisition practice",
+      detailKicker: "Paid acquisition",
       details: [
         {
-          name: "Channel Planning",
+          name: "Campaign Planning",
           description:
-            "Translating business goals into media mix, launch sequence, and spend allocation.",
+            "Structure campaigns around business goals, audiences, channels, and conversion objectives.",
         },
         {
-          name: "Campaign Architecture",
+          name: "Audience Targeting",
           description:
-            "Building account structures around intent, funnel stage, audience quality, and learning speed.",
+            "Define and refine audience segments based on behavior, intent, and campaign response.",
         },
         {
-          name: "Paid Search",
+          name: "Budget Management",
           description:
-            "Keyword strategy, ad group mapping, match type control, query hygiene, and landing page alignment.",
+            "Monitor spend, pacing, and efficiency so campaign investment stays aligned with goals.",
         },
         {
-          name: "Paid Social",
+          name: "A/B Testing",
           description:
-            "Creative testing, audience segmentation, retargeting logic, and offer-message pairing.",
+            "Compare messages, creatives, audiences, and landing paths to identify stronger campaign directions.",
         },
         {
-          name: "Budget Pacing",
+          name: "Performance Optimization",
           description:
-            "Monitoring spend, efficiency, and volume so experiments can scale without drifting off target.",
+            "Use conversion, cost, quality, and engagement signals to improve paid campaign results.",
         },
         {
-          name: "Conversion Optimization",
+          name: "Campaign Reporting",
           description:
-            "Reading performance signals across ads, forms, pages, and funnels to improve acquisition quality.",
+            "Translate platform and analytics data into clear performance summaries and next actions.",
         },
       ],
     }, {
       title: "广告投放",
       titleLines: ["广告", "投放"],
-      rubric: "广告",
-      note: "围绕可衡量获客目标组织预算、受众与信息结构。",
-      folio: "获客 / 测试 / 放量",
+      rubric: "投放",
+      note: "围绕目标、受众、预算与报告纪律展开的付费获客能力。",
+      folio: "广告活动 / 测试 / 报告",
       summary:
-        "广告投放用于支持需要清晰受众、可衡量预算与转化路径的获客活动。我用它把受众策略、渠道搭建、测试节奏和效果分析连接起来。",
+        "广告投放连接渠道搭建、受众逻辑、预算控制与效果报告，让付费 campaign 能够被清晰规划、测试和持续优化。",
       tools: [
         {
           name: "Google Ads",
           description:
-            "用于搜索广告管理、关键词优化与投放效果衡量。",
+            "用于搜索广告搭建、关键词管理与转化导向的效果复盘。",
           icon: "advertising",
         },
         {
           name: "Meta Ads",
           description:
-            "用于付费社交受众测试、创意迭代与转化型广告搭建。",
+            "用于付费社交广告搭建、受众测试与创意表现复盘。",
           icon: "advertising",
         },
         {
-          name: "YouTube Ads",
+          name: "TikTok Ads",
           description:
-            "用于视频广告规划、受众触达与认知到转化目标的效果复盘。",
-          icon: "content",
+            "用于短视频付费媒体测试、受众触达与 campaign 效果追踪。",
+          icon: "advertising",
         },
         {
           name: "Google Analytics",
@@ -256,65 +260,65 @@ export const skillCategories: SkillCategory[] = [
           icon: "analytics",
         },
       ],
-      detailKicker: "获客实践",
+      detailKicker: "付费获客",
       details: [
         {
-          name: "渠道规划",
+          name: "广告活动规划",
           description:
-            "将业务目标转化为媒体组合、上线顺序与预算分配。",
+            "围绕业务目标、受众、渠道与转化目标搭建 campaign 结构。",
         },
         {
-          name: "广告架构",
+          name: "受众定位",
           description:
-            "围绕意图、漏斗阶段、受众质量与学习速度搭建账户结构。",
+            "根据行为、意图与 campaign 反馈定义并优化受众分组。",
         },
         {
-          name: "搜索广告",
+          name: "预算管理",
           description:
-            "管理关键词策略、广告组映射、匹配方式、搜索词清理与落地页匹配。",
+            "监测花费、投放节奏与效率，让预算投入始终对齐目标。",
         },
         {
-          name: "社交广告",
+          name: "A/B 测试",
           description:
-            "处理创意测试、受众细分、再营销逻辑与 offer-message 匹配。",
+            "比较信息、创意、受众与落地路径，识别更有效的投放方向。",
         },
         {
-          name: "预算节奏",
+          name: "效果优化",
           description:
-            "监测花费、效率与转化量，让实验可以在不偏离目标的情况下放量。",
+            "结合转化、成本、质量与互动信号改进 paid campaign 表现。",
         },
         {
-          name: "转化优化",
+          name: "Campaign 报告",
           description:
-            "结合广告、表单、页面与漏斗信号，提升获客质量。",
+            "把平台与分析数据转化为清晰的表现总结和下一步行动。",
         },
       ],
     }, {
       title: "廣告投放",
       titleLines: ["廣告", "投放"],
-      rubric: "廣告",
-      note: "圍繞可衡量獲客目標組織預算、受眾與訊息架構。",
-      folio: "獲客 / 測試 / 放量",
+      rubric: "投放",
+      note: "圍繞目標、受眾、預算與報告紀律展開的付費獲客能力。",
+      folio: "廣告活動 / 測試 / 報告",
       summary:
-        "廣告投放用於支持需要清晰受眾、可衡量預算與轉化路徑的獲客活動。我用它把受眾策略、渠道搭建、測試節奏和成效分析連接起來。",
+        "廣告投放連接渠道搭建、受眾邏輯、預算控制與成效報告，讓付費 campaign 能夠被清晰規劃、測試和持續優化。",
       tools: [
         {
           name: "Google Ads",
           description:
-            "用於搜尋廣告管理、關鍵字優化與投放成效衡量。",
+            "用於搜尋廣告搭建、關鍵字管理與轉化導向的成效復盤。",
           icon: "advertising",
         },
         {
           name: "Meta Ads",
           description:
-            "用於付費社群受眾測試、創意迭代與轉化型廣告搭建。",
+            "用於付費社群廣告搭建、受眾測試與創意表現復盤。",
           icon: "advertising",
         },
         {
-          name: "YouTube Ads",
+          name: "TikTok Ads",
           description:
-            "用於影片廣告規劃、受眾觸達與認知到轉化目標的成效復盤。",
-          icon: "content",
+            "用於短影音付費媒體測試、受眾觸達與 campaign 成效追蹤。",
+          icon: "advertising",
         },
         {
           name: "Google Analytics",
@@ -323,37 +327,37 @@ export const skillCategories: SkillCategory[] = [
           icon: "analytics",
         },
       ],
-      detailKicker: "獲客實踐",
+      detailKicker: "付費獲客",
       details: [
         {
-          name: "渠道規劃",
+          name: "廣告活動規劃",
           description:
-            "將業務目標轉化為媒體組合、上線順序與預算分配。",
+            "圍繞業務目標、受眾、渠道與轉化目標搭建 campaign 結構。",
         },
         {
-          name: "廣告架構",
+          name: "受眾定位",
           description:
-            "圍繞意圖、漏斗階段、受眾品質與學習速度搭建帳戶結構。",
+            "根據行為、意圖與 campaign 回饋定義並優化受眾分組。",
         },
         {
-          name: "搜尋廣告",
+          name: "預算管理",
           description:
-            "管理關鍵字策略、廣告組映射、匹配方式、搜尋詞清理與落地頁匹配。",
+            "監測花費、投放節奏與效率，讓預算投入始終對齊目標。",
         },
         {
-          name: "社群廣告",
+          name: "A/B 測試",
           description:
-            "處理創意測試、受眾細分、再行銷邏輯與 offer-message 匹配。",
+            "比較訊息、創意、受眾與落地路徑，識別更有效的投放方向。",
         },
         {
-          name: "預算節奏",
+          name: "成效優化",
           description:
-            "監測花費、效率與轉化量，讓實驗可以在不偏離目標的情況下放量。",
+            "結合轉化、成本、品質與互動訊號改進 paid campaign 表現。",
         },
         {
-          name: "轉化優化",
+          name: "Campaign 報告",
           description:
-            "結合廣告、表單、頁面與漏斗訊號，提升獲客品質。",
+            "把平台與分析資料轉化為清晰的表現總結和下一步行動。",
         },
       ],
     }),
@@ -365,12 +369,18 @@ export const skillCategories: SkillCategory[] = [
     translations: categoryCopy({
       title: "Marketing Analytics",
       titleLines: ["Marketing", "Analytics"],
-      rubric: "Measurement",
-      note: "A clean reading system for the decisions that shape growth.",
-      folio: "Attribution / Dashboards / Insight",
+      rubric: "Data",
+      note: "Campaign data translated into reporting, insight, and practical decisions.",
+      folio: "Measurement / Reporting / Insight",
       summary:
-        "Marketing analytics turns campaign activity into evidence for decisions. I use it to build reporting logic, interpret performance signals, and translate data into next-step recommendations.",
+        "Marketing analytics turns campaign activity into evidence for decisions. I use analytics tools, query logic, and reporting workflows to understand performance and communicate what should happen next.",
       tools: [
+        {
+          name: "Google Analytics",
+          description:
+            "Traffic source analysis, conversion review, and audience behavior reporting.",
+          icon: "analytics",
+        },
         {
           name: "SQL",
           description:
@@ -380,70 +390,59 @@ export const skillCategories: SkillCategory[] = [
         {
           name: "Python",
           description:
-            "Data cleaning, lightweight analysis, and repeatable reporting workflows.",
+            "Lightweight marketing analysis, repeatable reporting tasks, and data workflow support.",
           icon: "automation",
         },
         {
-          name: "R language",
+          name: "R",
           description:
-            "Statistical analysis, structured exploration, and research-oriented data review.",
+            "Statistical review and research-oriented analysis for marketing datasets.",
           icon: "analytics",
-        },
-        {
-          name: "Google Analytics",
-          description:
-            "Traffic source analysis, conversion review, and audience behavior reporting.",
-          icon: "analytics",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "Insight documentation, reporting tables, and stakeholder-ready analysis decks.",
-          icon: "document",
         },
       ],
-      detailKicker: "Measurement practice",
+      detailKicker: "Marketing measurement",
       details: [
         {
-          name: "Measurement Planning",
+          name: "Campaign Measurement",
           description:
-            "Defining events, goals, source logic, and reporting layers before campaigns go live.",
+            "Define and read campaign metrics across traffic, conversion, cost, and audience quality.",
         },
         {
-          name: "Funnel Analysis",
+          name: "Pivot Table Reporting",
           description:
-            "Locating drop-off, lag, and quality shifts across visitor, lead, and customer journeys.",
+            "Organize campaign data into pivot-based views for channel, campaign, and performance comparisons.",
         },
         {
-          name: "Dashboard Design",
+          name: "Performance Reporting",
           description:
-            "Turning noisy metrics into readable views for weekly decision-making and stakeholder updates.",
+            "Build concise reporting views that show what changed, why it matters, and what to do next.",
         },
         {
-          name: "Attribution Review",
+          name: "Marketing Insights",
           description:
-            "Comparing platform, analytics, and CRM signals without treating any single report as absolute truth.",
+            "Translate patterns in campaign and audience data into practical recommendations.",
         },
         {
-          name: "Experiment Readouts",
+          name: "Data Visualization",
           description:
-            "Summarizing test results with context, caveats, confidence, and the next decision.",
-        },
-        {
-          name: "Tracking QA",
-          description:
-            "Auditing UTM standards, event capture, conversion paths, and reporting consistency.",
+            "Turn marketing metrics into readable charts and summaries for faster decision-making.",
         },
       ],
     }, {
       title: "市场营销分析",
       titleLines: ["市场营销", "分析"],
-      rubric: "分析",
-      note: "为增长决策建立清晰、可读、可执行的衡量系统。",
-      folio: "归因 / 看板 / 洞察",
+      rubric: "数据",
+      note: "把 campaign 数据转化为报告、洞察与实际决策。",
+      folio: "衡量 / 报告 / 洞察",
       summary:
-        "市场营销分析把 campaign 活动转化为可用于判断的证据。我用它建立汇报逻辑、解读表现信号，并把数据转化为下一步建议。",
+        "市场营销分析把 campaign 活动转化为决策依据。我使用分析工具、查询逻辑与报告流程来理解表现，并清晰说明下一步应该怎么做。",
       tools: [
+        {
+          name: "Google Analytics",
+          description:
+            "用于流量来源分析、转化复盘与受众行为报告。",
+          icon: "analytics",
+        },
         {
           name: "SQL",
           description:
@@ -453,70 +452,59 @@ export const skillCategories: SkillCategory[] = [
         {
           name: "Python",
           description:
-            "用于数据清理、轻量分析与可重复的报告流程。",
+            "用于轻量营销分析、可重复报告任务与数据流程支持。",
           icon: "automation",
         },
         {
-          name: "R 语言",
+          name: "R",
           description:
-            "用于统计分析、结构化探索与偏研究型的数据复盘。",
+            "用于营销数据集的统计复盘与偏研究型分析。",
           icon: "analytics",
-        },
-        {
-          name: "Google Analytics",
-          description:
-            "用于流量来源分析、转化复盘与受众行为报告。",
-          icon: "analytics",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "用于洞察整理、报告表格与面向 stakeholder 的分析材料。",
-          icon: "document",
         },
       ],
-      detailKicker: "衡量实践",
+      detailKicker: "营销衡量",
       details: [
         {
-          name: "衡量规划",
+          name: "Campaign 衡量",
           description:
-            "在 campaign 上线前定义事件、目标、来源逻辑与报告层级。",
+            "围绕流量、转化、成本与受众质量定义并解读 campaign 指标。",
         },
         {
-          name: "漏斗分析",
+          name: "数据透视表报告",
           description:
-            "定位访客、线索与客户路径中的流失、延迟与质量变化。",
+            "用透视表整理 campaign 数据，比较渠道、活动与表现差异。",
         },
         {
-          name: "看板设计",
+          name: "效果报告",
           description:
-            "把分散指标整理成适合周度决策与汇报的可读视图。",
+            "建立简洁报告视图，说明发生了什么、为什么重要以及下一步行动。",
         },
         {
-          name: "归因复盘",
+          name: "营销洞察",
           description:
-            "比较平台、分析工具与 CRM 信号，而不把单一报告当作绝对事实。",
+            "把 campaign 与受众数据中的模式转化为实际建议。",
         },
         {
-          name: "实验解读",
+          name: "数据可视化",
           description:
-            "结合背景、限制、信心程度与下一步决策总结测试结果。",
-        },
-        {
-          name: "追踪 QA",
-          description:
-            "检查 UTM 标准、事件捕捉、转化路径与报告一致性。",
+            "把营销指标转化为易读图表与摘要，支持更快决策。",
         },
       ],
     }, {
       title: "市場行銷分析",
       titleLines: ["市場行銷", "分析"],
-      rubric: "分析",
-      note: "為成長決策建立清晰、可讀、可執行的衡量系統。",
-      folio: "歸因 / 看板 / 洞察",
+      rubric: "資料",
+      note: "把 campaign 資料轉化為報告、洞察與實際決策。",
+      folio: "衡量 / 報告 / 洞察",
       summary:
-        "市場行銷分析把 campaign 活動轉化為可用於判斷的證據。我用它建立報告邏輯、解讀表現訊號，並把資料轉化為下一步建議。",
+        "市場行銷分析把 campaign 活動轉化為決策依據。我使用分析工具、查詢邏輯與報告流程來理解表現，並清晰說明下一步應該怎麼做。",
       tools: [
+        {
+          name: "Google Analytics",
+          description:
+            "用於流量來源分析、轉化復盤與受眾行為報告。",
+          icon: "analytics",
+        },
         {
           name: "SQL",
           description:
@@ -526,59 +514,42 @@ export const skillCategories: SkillCategory[] = [
         {
           name: "Python",
           description:
-            "用於資料清理、輕量分析與可重複的報告流程。",
+            "用於輕量行銷分析、可重複報告任務與資料流程支持。",
           icon: "automation",
         },
         {
-          name: "R 語言",
+          name: "R",
           description:
-            "用於統計分析、結構化探索與偏研究型的資料復盤。",
+            "用於行銷資料集的統計復盤與偏研究型分析。",
           icon: "analytics",
-        },
-        {
-          name: "Google Analytics",
-          description:
-            "用於流量來源分析、轉化復盤與受眾行為報告。",
-          icon: "analytics",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "用於洞察整理、報告表格與面向 stakeholder 的分析材料。",
-          icon: "document",
         },
       ],
-      detailKicker: "衡量實踐",
+      detailKicker: "行銷衡量",
       details: [
         {
-          name: "衡量規劃",
+          name: "Campaign 衡量",
           description:
-            "在 campaign 上線前定義事件、目標、來源邏輯與報告層級。",
+            "圍繞流量、轉化、成本與受眾品質定義並解讀 campaign 指標。",
         },
         {
-          name: "漏斗分析",
+          name: "樞紐分析表報告",
           description:
-            "定位訪客、線索與客戶路徑中的流失、延遲與品質變化。",
+            "用樞紐分析表整理 campaign 資料，比較渠道、活動與表現差異。",
         },
         {
-          name: "看板設計",
+          name: "成效報告",
           description:
-            "把分散指標整理成適合週度決策與匯報的可讀視圖。",
+            "建立簡潔報告視圖，說明發生了什麼、為什麼重要以及下一步行動。",
         },
         {
-          name: "歸因復盤",
+          name: "行銷洞察",
           description:
-            "比較平台、分析工具與 CRM 訊號，而不把單一報告當作絕對事實。",
+            "把 campaign 與受眾資料中的模式轉化為實際建議。",
         },
         {
-          name: "實驗解讀",
+          name: "資料視覺化",
           description:
-            "結合背景、限制、信心程度與下一步決策總結測試結果。",
-        },
-        {
-          name: "追蹤 QA",
-          description:
-            "檢查 UTM 標準、事件捕捉、轉化路徑與報告一致性。",
+            "把行銷指標轉化為易讀圖表與摘要，支持更快決策。",
         },
       ],
     }),
@@ -588,13 +559,13 @@ export const skillCategories: SkillCategory[] = [
     number: "03",
     posterClassName: "skills-poster--seo",
     translations: categoryCopy({
-      title: "Search & Growth",
-      titleLines: ["Search", "& Growth"],
+      title: "SEO & Growth",
+      titleLines: ["SEO", "& Growth"],
       rubric: "Search",
-      note: "Search visibility, content intent, and compounding discovery loops.",
-      folio: "Search / Content / CRO",
+      note: "Organic visibility shaped by search intent, content quality, and growth logic.",
+      folio: "Search / Content / Growth",
       summary:
-        "Search and growth work connects organic visibility with content, site structure, and conversion paths. I use it to identify demand, improve pages, and build compounding discovery systems.",
+        "SEO and growth work connects organic search visibility with content structure, audience demand, and practical growth opportunities.",
       tools: [
         {
           name: "Semrush",
@@ -603,65 +574,48 @@ export const skillCategories: SkillCategory[] = [
           icon: "search",
         },
         {
-          name: "Google Search Console",
-          description:
-            "Search performance review, indexing checks, and query-level optimization.",
-          icon: "search",
-        },
-        {
-          name: "Google Analytics",
-          description:
-            "Organic traffic behavior, conversion paths, and landing page performance analysis.",
-          icon: "analytics",
-        },
-        {
           name: "WordPress",
           description:
             "Content publishing, on-page updates, metadata edits, and site structure support.",
           icon: "web",
         },
       ],
-      detailKicker: "Organic growth practice",
+      detailKicker: "Organic growth",
       details: [
         {
-          name: "Keyword Strategy",
+          name: "Keyword Research",
           description:
-            "Mapping demand, intent, difficulty, and commercial value into a practical content plan.",
+            "Identify relevant search opportunities based on intent, competition, and business value.",
         },
         {
-          name: "Technical SEO Review",
+          name: "Search Intent Analysis",
           description:
-            "Checking crawlability, indexation, internal linking, metadata, speed, and structured content health.",
+            "Read what audiences are trying to solve and align content direction with that intent.",
         },
         {
-          name: "Content Briefs",
+          name: "Content Optimization",
           description:
-            "Creating briefs that connect search intent, brand point of view, and conversion purpose.",
+            "Improve page structure, messaging, and metadata for stronger organic visibility.",
         },
         {
-          name: "On-Page Optimization",
+          name: "Competitor Analysis",
           description:
-            "Improving page hierarchy, headings, metadata, internal links, and answer quality.",
+            "Review competitor content, positioning, and search coverage to find practical gaps.",
         },
         {
-          name: "Growth Experiments",
+          name: "Organic Growth Strategy",
           description:
-            "Designing lightweight tests across offers, landing pages, forms, and traffic paths.",
-        },
-        {
-          name: "Search Reporting",
-          description:
-            "Reading rankings, impressions, click-through, and assisted conversion as one operating picture.",
+            "Connect search demand, content priorities, and conversion paths into a sustainable growth plan.",
         },
       ],
     }, {
       title: "SEO 与增长",
       titleLines: ["SEO", "与增长"],
       rubric: "搜索",
-      note: "连接搜索可见度、内容意图与可持续增长路径。",
-      folio: "搜索 / 内容 / CRO",
+      note: "围绕搜索意图、内容质量与增长逻辑提升自然可见度。",
+      folio: "搜索 / 内容 / 增长",
       summary:
-        "SEO 与增长把自然搜索可见度、内容结构和转化路径连接起来。我用它识别需求、优化页面，并建立能够持续积累的发现系统。",
+        "SEO 与增长把自然搜索可见度、内容结构、受众需求与实际增长机会连接起来。",
       tools: [
         {
           name: "Semrush",
@@ -670,25 +624,13 @@ export const skillCategories: SkillCategory[] = [
           icon: "search",
         },
         {
-          name: "Google Search Console",
-          description:
-            "用于搜索表现复盘、索引检查与 query 层面的优化。",
-          icon: "search",
-        },
-        {
-          name: "Google Analytics",
-          description:
-            "用于自然流量行为、转化路径与落地页表现分析。",
-          icon: "analytics",
-        },
-        {
           name: "WordPress",
           description:
             "用于内容发布、页面更新、metadata 编辑与网站结构支持。",
           icon: "web",
         },
       ],
-      detailKicker: "自然增长实践",
+      detailKicker: "自然增长",
       details: [
         {
           name: "关键词研究",
@@ -696,39 +638,34 @@ export const skillCategories: SkillCategory[] = [
             "根据意图、竞争程度与业务价值识别相关搜索机会。",
         },
         {
-          name: "技术 SEO 检查",
+          name: "搜索意图分析",
           description:
-            "检查可抓取性、索引、内链、metadata、速度与结构化内容健康度。",
+            "理解受众真正想解决的问题，并让内容方向与搜索意图对齐。",
         },
         {
-          name: "内容 Brief",
+          name: "内容优化",
           description:
-            "创建连接搜索意图、品牌观点与转化目标的内容 brief。",
+            "优化页面结构、信息表达与 metadata，提升自然搜索可见度。",
         },
         {
-          name: "页面优化",
+          name: "竞品分析",
           description:
-            "优化页面层级、标题、metadata、内链与回答质量。",
+            "复盘竞品内容、定位与搜索覆盖，找到可执行的机会缺口。",
         },
         {
-          name: "增长实验",
+          name: "自然增长策略",
           description:
-            "围绕 offer、落地页、表单与流量路径设计轻量测试。",
-        },
-        {
-          name: "搜索表现分析",
-          description:
-            "把排名、曝光、点击率与辅助转化作为一个整体运营图景来解读。",
+            "把搜索需求、内容优先级与转化路径连接成可持续的增长计划。",
         },
       ],
     }, {
       title: "SEO 與增長",
       titleLines: ["SEO", "與增長"],
       rubric: "搜尋",
-      note: "連接搜尋可見度、內容意圖與可持續成長路徑。",
-      folio: "搜尋 / 內容 / CRO",
+      note: "圍繞搜尋意圖、內容品質與成長邏輯提升自然可見度。",
+      folio: "搜尋 / 內容 / 成長",
       summary:
-        "SEO 與增長把自然搜尋可見度、內容結構和轉化路徑連接起來。我用它識別需求、優化頁面，並建立能夠持續累積的發現系統。",
+        "SEO 與增長把自然搜尋可見度、內容結構、受眾需求與實際成長機會連接起來。",
       tools: [
         {
           name: "Semrush",
@@ -737,25 +674,13 @@ export const skillCategories: SkillCategory[] = [
           icon: "search",
         },
         {
-          name: "Google Search Console",
-          description:
-            "用於搜尋表現復盤、索引檢查與 query 層面的優化。",
-          icon: "search",
-        },
-        {
-          name: "Google Analytics",
-          description:
-            "用於自然流量行為、轉化路徑與落地頁表現分析。",
-          icon: "analytics",
-        },
-        {
           name: "WordPress",
           description:
             "用於內容發布、頁面更新、metadata 編輯與網站結構支持。",
           icon: "web",
         },
       ],
-      detailKicker: "自然成長實踐",
+      detailKicker: "自然成長",
       details: [
         {
           name: "關鍵字研究",
@@ -763,29 +688,24 @@ export const skillCategories: SkillCategory[] = [
             "根據意圖、競爭程度與業務價值識別相關搜尋機會。",
         },
         {
-          name: "技術 SEO 檢查",
+          name: "搜尋意圖分析",
           description:
-            "檢查可抓取性、索引、內鏈、metadata、速度與結構化內容健康度。",
+            "理解受眾真正想解決的問題，並讓內容方向與搜尋意圖對齊。",
         },
         {
-          name: "內容 Brief",
+          name: "內容優化",
           description:
-            "建立連接搜尋意圖、品牌觀點與轉化目標的內容 brief。",
+            "優化頁面結構、訊息表達與 metadata，提升自然搜尋可見度。",
         },
         {
-          name: "頁面優化",
+          name: "競品分析",
           description:
-            "優化頁面層級、標題、metadata、內鏈與回答品質。",
+            "復盤競品內容、定位與搜尋覆蓋，找到可執行的機會缺口。",
         },
         {
-          name: "成長實驗",
+          name: "自然成長策略",
           description:
-            "圍繞 offer、落地頁、表單與流量路徑設計輕量測試。",
-        },
-        {
-          name: "搜尋表現分析",
-          description:
-            "把排名、曝光、點擊率與輔助轉化作為一個整體營運圖景來解讀。",
+            "把搜尋需求、內容優先級與轉化路徑連接成可持續的成長計畫。",
         },
       ],
     }),
@@ -798,203 +718,137 @@ export const skillCategories: SkillCategory[] = [
       title: "Strategy & Insights",
       titleLines: ["Strategy", "& Insights"],
       rubric: "Strategy",
-      note: "Market context, audience intelligence, and the argument behind the work.",
-      folio: "Audience / Market / Narrative",
+      note: "Research and planning logic that makes marketing decisions sharper.",
+      folio: "Research / Audience / Planning",
       summary:
-        "Strategy and insights work defines the argument behind campaigns before execution begins. I use research, audience context, and competitive signals to shape positioning, messaging, and planning decisions.",
+        "Strategy and insights work clarifies audiences, market context, competitive signals, and planning decisions before campaigns move into execution.",
+      toolsTitle: "Core Competencies",
+      toolsDescription:
+        "The research and planning competencies I use to shape marketing decisions before execution.",
       tools: [
         {
-          name: "Desk Research",
+          name: "Consumer Research",
           description:
-            "Market, audience, and competitor context gathering before strategy decisions.",
-          icon: "research",
+            "Understand consumer needs, motivations, barriers, and decision triggers.",
         },
-        {
-          name: "Google Forms",
-          description:
-            "Lightweight survey collection, audience feedback, and structured response review.",
-          icon: "document",
-        },
-        {
-          name: "Google Trends",
-          description:
-            "Demand pattern review, topic validation, and cultural timing checks.",
-          icon: "search",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "Planning documents, research synthesis, and presentation-ready strategy narratives.",
-          icon: "strategy",
-        },
-      ],
-      detailKicker: "Strategy practice",
-      details: [
         {
           name: "Market Research",
           description:
-            "Sourcing patterns from audience behavior, category norms, competitor motion, and customer language.",
+            "Review market context, category behavior, and demand signals that shape strategy.",
         },
         {
           name: "Competitor Analysis",
           description:
-            "Studying positioning, offer design, channel mix, messaging, and whitespace opportunities.",
+            "Study competitor positioning, messaging, channels, and opportunity gaps.",
         },
         {
           name: "Audience Segmentation",
           description:
-            "Defining audience groups by needs, motivations, buying triggers, and readiness.",
+            "Group audiences by needs, behaviors, intent, and readiness to act.",
         },
         {
-          name: "Journey Mapping",
+          name: "Campaign Planning",
           description:
-            "Connecting awareness, consideration, decision, and retention moments into a coherent path.",
+            "Translate goals, audience insights, and channel priorities into campaign direction.",
         },
         {
-          name: "Messaging Strategy",
+          name: "Marketing Strategy",
           description:
-            "Sharpening value propositions, proof points, objections, and campaign narratives.",
-        },
-        {
-          name: "Planning Workshops",
-          description:
-            "Turning stakeholder input into priorities, hypotheses, and operating direction.",
+            "Shape positioning, messaging, and tactical priorities around business and audience context.",
         },
       ],
+      detailKicker: "Strategic planning",
+      details: [],
     }, {
       title: "策略规划",
       titleLines: ["策略", "规划"],
       rubric: "策略",
-      note: "用市场背景、受众洞察与信息逻辑支撑传播判断。",
-      folio: "受众 / 市场 / 叙事",
+      note: "用研究与规划逻辑提升营销判断的清晰度。",
+      folio: "研究 / 受众 / 规划",
       summary:
-        "策略规划定义 campaign 执行前的核心判断。我用研究、受众语境和竞品信号来塑造定位、信息结构与传播计划。",
+        "策略规划在 campaign 进入执行前，帮助厘清受众、市场背景、竞品信号与传播决策。",
+      toolsTitle: "核心能力",
+      toolsDescription:
+        "这些研究与规划能力用于在执行前支持更清晰的营销决策。",
       tools: [
         {
-          name: "Desk Research",
+          name: "消费者研究",
           description:
-            "用于收集市场、受众与竞品背景，支持策略判断。",
-          icon: "research",
+            "理解消费者需求、动机、阻碍与决策触发点。",
         },
-        {
-          name: "Google Forms",
-          description:
-            "用于轻量问卷收集、受众反馈与结构化回答整理。",
-          icon: "document",
-        },
-        {
-          name: "Google Trends",
-          description:
-            "用于需求趋势观察、话题验证与传播时机判断。",
-          icon: "search",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "用于规划文档、研究综合与可汇报的策略叙事。",
-          icon: "strategy",
-        },
-      ],
-      detailKicker: "策略实践",
-      details: [
         {
           name: "市场研究",
           description:
-            "从受众行为、品类规律、竞品动作与用户语言中提炼模式。",
+            "复盘市场背景、品类行为与影响策略的需求信号。",
         },
         {
           name: "竞品分析",
           description:
-            "研究定位、offer 设计、渠道组合、信息表达与空白机会。",
+            "研究竞品定位、信息表达、渠道选择与机会缺口。",
         },
         {
           name: "受众细分",
           description:
-            "根据需求、动机、购买触发点与准备程度定义受众分组。",
+            "根据需求、行为、意图与行动准备程度划分受众。",
         },
         {
-          name: "用户旅程",
+          name: "Campaign 规划",
           description:
-            "把认知、考虑、决策与留存阶段连接成清晰路径。",
+            "把目标、受众洞察与渠道优先级转化为 campaign 方向。",
         },
         {
-          name: "信息策略",
+          name: "营销策略",
           description:
-            "打磨价值主张、证据点、用户顾虑与 campaign 叙事。",
-        },
-        {
-          name: "规划工作坊",
-          description:
-            "把 stakeholder 输入转化为优先级、假设与执行方向。",
+            "围绕业务目标与受众语境塑造定位、信息与执行优先级。",
         },
       ],
+      detailKicker: "策略规划",
+      details: [],
     }, {
       title: "策略規劃",
       titleLines: ["策略", "規劃"],
       rubric: "策略",
-      note: "用市場背景、受眾洞察與訊息邏輯支撐傳播判斷。",
-      folio: "受眾 / 市場 / 敘事",
+      note: "用研究與規劃邏輯提升行銷判斷的清晰度。",
+      folio: "研究 / 受眾 / 規劃",
       summary:
-        "策略規劃定義 campaign 執行前的核心判斷。我用研究、受眾語境和競品訊號來塑造定位、訊息結構與傳播計畫。",
+        "策略規劃在 campaign 進入執行前，幫助釐清受眾、市場背景、競品訊號與傳播決策。",
+      toolsTitle: "核心能力",
+      toolsDescription:
+        "這些研究與規劃能力用於在執行前支持更清晰的行銷決策。",
       tools: [
         {
-          name: "Desk Research",
+          name: "消費者研究",
           description:
-            "用於收集市場、受眾與競品背景，支持策略判斷。",
-          icon: "research",
+            "理解消費者需求、動機、阻礙與決策觸發點。",
         },
-        {
-          name: "Google Forms",
-          description:
-            "用於輕量問卷收集、受眾回饋與結構化回答整理。",
-          icon: "document",
-        },
-        {
-          name: "Google Trends",
-          description:
-            "用於需求趨勢觀察、話題驗證與傳播時機判斷。",
-          icon: "search",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "用於規劃文件、研究綜合與可匯報的策略敘事。",
-          icon: "strategy",
-        },
-      ],
-      detailKicker: "策略實踐",
-      details: [
         {
           name: "市場研究",
           description:
-            "從受眾行為、品類規律、競品動作與使用者語言中提煉模式。",
+            "復盤市場背景、品類行為與影響策略的需求訊號。",
         },
         {
           name: "競品分析",
           description:
-            "研究定位、offer 設計、渠道組合、訊息表達與空白機會。",
+            "研究競品定位、訊息表達、渠道選擇與機會缺口。",
         },
         {
           name: "受眾細分",
           description:
-            "根據需求、動機、購買觸發點與準備程度定義受眾分組。",
+            "根據需求、行為、意圖與行動準備程度劃分受眾。",
         },
         {
-          name: "使用者旅程",
+          name: "Campaign 規劃",
           description:
-            "把認知、考慮、決策與留存階段連接成清晰路徑。",
+            "把目標、受眾洞察與渠道優先級轉化為 campaign 方向。",
         },
         {
-          name: "訊息策略",
+          name: "行銷策略",
           description:
-            "打磨價值主張、證據點、使用者顧慮與 campaign 敘事。",
-        },
-        {
-          name: "規劃工作坊",
-          description:
-            "把 stakeholder 輸入轉化為優先級、假設與執行方向。",
+            "圍繞業務目標與受眾語境塑造定位、訊息與執行優先級。",
         },
       ],
+      detailKicker: "策略規劃",
+      details: [],
     }),
   },
   {
@@ -1002,204 +856,141 @@ export const skillCategories: SkillCategory[] = [
     number: "05",
     posterClassName: "skills-poster--web",
     translations: categoryCopy({
-      title: "Web & AI Automation",
-      titleLines: ["Web & AI", "Automation"],
+      title: "Technical Skills",
+      titleLines: ["Technical", "Skills"],
       rubric: "AI",
-      note: "Landing pages, workflows, and quiet infrastructure behind better marketing.",
-      folio: "Pages / Forms / Flows",
+      note: "AI-assisted workflows and technical fluency for modern marketing operations.",
+      folio: "AI / Prompts / Workflow",
       summary:
-        "Web and AI automation supports the systems behind cleaner marketing operations. I use it to build pages, organize workflows, and reduce repetitive work across content, forms, and data handoffs.",
+        "Technical skills support the AI-assisted workflows, prompt systems, and lightweight automation that make marketing work more structured and efficient.",
       tools: [
         {
-          name: "WordPress",
+          name: "HTML",
           description:
-            "Marketing page updates, CMS organization, and campaign-ready content publishing.",
+            "Basic markup fluency for editing content structure, email or page snippets, and technical handoffs.",
           icon: "web",
         },
         {
-          name: "Python",
+          name: "Cursor",
           description:
-            "Lightweight scripts for data cleanup, repetitive tasks, and workflow support.",
+            "AI-assisted workspace for drafting, revising, and organizing marketing workflow outputs.",
           icon: "automation",
         },
         {
-          name: "AI Assistants",
+          name: "Claude Code",
           description:
-            "Drafting support, workflow ideation, content operations, and structured task acceleration.",
+            "Structured AI coding support for prompt iteration, workflow setup, and technical problem solving.",
           icon: "automation",
-        },
-        {
-          name: "Form Workflows",
-          description:
-            "Submission routing, lead capture structure, and follow-up process organization.",
-          icon: "document",
         },
       ],
-      detailKicker: "Systems practice",
+      detailKicker: "AI and workflow support",
       details: [
         {
-          name: "Landing Page Systems",
+          name: "AI Workflow Design",
           description:
-            "Designing page structures around offer clarity, proof, conversion paths, and campaign fit.",
+            "Design repeatable AI-assisted processes for research, content, reporting, and execution support.",
         },
         {
-          name: "Form Workflows",
+          name: "Prompt Engineering",
           description:
-            "Routing submissions, reducing friction, capturing context, and keeping follow-up reliable.",
+            "Write structured prompts that clarify context, constraints, output format, and review criteria.",
         },
         {
-          name: "Marketing Automation",
+          name: "Workflow Automation",
           description:
-            "Building simple sequences, alerts, handoffs, and data movement across common tools.",
-        },
-        {
-          name: "CMS Operations",
-          description:
-            "Organizing reusable content, page updates, metadata, and publishing processes.",
-        },
-        {
-          name: "Integration Mapping",
-          description:
-            "Clarifying how leads, events, lists, and campaign data should pass between systems.",
-        },
-        {
-          name: "QA & Maintenance",
-          description:
-            "Checking forms, links, analytics events, responsive behavior, and launch readiness.",
+            "Reduce repetitive marketing tasks through lightweight systems, templates, and process logic.",
         },
       ],
     }, {
-      title: "网站技术与自动化",
-      titleLines: ["网站技术", "与自动化"],
-      rubric: "自动化",
-      note: "用页面、工作流与轻量系统支持更顺畅的营销执行。",
-      folio: "页面 / 表单 / 流程",
+      title: "技术技能",
+      titleLines: ["技术", "技能"],
+      rubric: "AI",
+      note: "用 AI 工作流与技术理解支持更高效的现代营销执行。",
+      folio: "AI / 提示词 / 流程",
       summary:
-        "网站技术与自动化支撑更清晰的营销运营系统。我用它搭建页面、组织工作流，并减少内容、表单与数据交接中的重复劳动。",
+        "技术技能用于支持 AI 辅助工作流、提示词系统与轻量自动化，让营销工作更有结构也更高效。",
       tools: [
         {
-          name: "WordPress",
+          name: "HTML",
           description:
-            "用于营销页面更新、CMS 组织与 campaign 内容发布。",
+            "用于基础内容结构编辑、邮件或页面片段调整，以及技术沟通交接。",
           icon: "web",
         },
         {
-          name: "Python",
+          name: "Cursor",
           description:
-            "用于数据清理、重复任务处理与轻量工作流支持。",
+            "用于 AI 辅助的草稿整理、内容修订与营销工作流输出。",
           icon: "automation",
         },
         {
-          name: "AI 助手",
+          name: "Claude Code",
           description:
-            "用于草稿支持、流程构思、内容运营与结构化任务加速。",
+            "用于结构化 AI 编码支持、提示词迭代、流程搭建与技术问题拆解。",
           icon: "automation",
-        },
-        {
-          name: "表单流程",
-          description:
-            "用于提交路由、线索收集结构与后续跟进流程整理。",
-          icon: "document",
         },
       ],
-      detailKicker: "系统实践",
+      detailKicker: "AI 与流程支持",
       details: [
         {
-          name: "落地页系统",
+          name: "AI 工作流设计",
           description:
-            "围绕 offer 清晰度、证据、转化路径与 campaign 适配设计页面结构。",
+            "为研究、内容、报告与执行支持设计可重复的 AI 辅助流程。",
         },
         {
-          name: "表单流程",
+          name: "提示词工程",
           description:
-            "规划提交路由、降低填写阻力、捕捉上下文并保持跟进可靠。",
+            "撰写结构化提示词，明确背景、限制、输出格式与审核标准。",
         },
         {
-          name: "营销自动化",
+          name: "工作流自动化",
           description:
-            "搭建简单序列、提醒、交接与常用工具之间的数据流转。",
-        },
-        {
-          name: "CMS 运营",
-          description:
-            "组织可复用内容、页面更新、metadata 与发布流程。",
-        },
-        {
-          name: "集成映射",
-          description:
-            "梳理线索、事件、名单与 campaign 数据在系统之间的传递方式。",
-        },
-        {
-          name: "QA 与维护",
-          description:
-            "检查表单、链接、分析事件、响应式表现与上线准备度。",
+            "通过轻量系统、模板与流程逻辑减少重复性的营销任务。",
         },
       ],
     }, {
-      title: "網站技術與自動化",
-      titleLines: ["網站技術", "與自動化"],
-      rubric: "自動化",
-      note: "用頁面、工作流與輕量系統支持更順暢的行銷執行。",
-      folio: "頁面 / 表單 / 流程",
+      title: "技術技能",
+      titleLines: ["技術", "技能"],
+      rubric: "AI",
+      note: "用 AI 工作流與技術理解支持更高效的現代行銷執行。",
+      folio: "AI / 提示詞 / 流程",
       summary:
-        "網站技術與自動化支撐更清晰的行銷營運系統。我用它搭建頁面、組織工作流，並減少內容、表單與資料交接中的重複勞動。",
+        "技術技能用於支持 AI 輔助工作流、提示詞系統與輕量自動化，讓行銷工作更有結構也更高效。",
       tools: [
         {
-          name: "WordPress",
+          name: "HTML",
           description:
-            "用於行銷頁面更新、CMS 組織與 campaign 內容發布。",
+            "用於基礎內容結構編輯、郵件或頁面片段調整，以及技術溝通交接。",
           icon: "web",
         },
         {
-          name: "Python",
+          name: "Cursor",
           description:
-            "用於資料清理、重複任務處理與輕量工作流支持。",
+            "用於 AI 輔助的草稿整理、內容修訂與行銷工作流輸出。",
           icon: "automation",
         },
         {
-          name: "AI 助手",
+          name: "Claude Code",
           description:
-            "用於草稿支持、流程構思、內容營運與結構化任務加速。",
+            "用於結構化 AI 編碼支持、提示詞迭代、流程搭建與技術問題拆解。",
           icon: "automation",
-        },
-        {
-          name: "表單流程",
-          description:
-            "用於提交路由、線索收集結構與後續跟進流程整理。",
-          icon: "document",
         },
       ],
-      detailKicker: "系統實踐",
+      detailKicker: "AI 與流程支持",
       details: [
         {
-          name: "落地頁系統",
+          name: "AI 工作流設計",
           description:
-            "圍繞 offer 清晰度、證據、轉化路徑與 campaign 適配設計頁面結構。",
+            "為研究、內容、報告與執行支持設計可重複的 AI 輔助流程。",
         },
         {
-          name: "表單流程",
+          name: "提示詞工程",
           description:
-            "規劃提交路由、降低填寫阻力、捕捉上下文並保持跟進可靠。",
+            "撰寫結構化提示詞，明確背景、限制、輸出格式與審核標準。",
         },
         {
-          name: "行銷自動化",
+          name: "工作流自動化",
           description:
-            "搭建簡單序列、提醒、交接與常用工具之間的資料流轉。",
-        },
-        {
-          name: "CMS 營運",
-          description:
-            "組織可復用內容、頁面更新、metadata 與發布流程。",
-        },
-        {
-          name: "整合映射",
-          description:
-            "梳理線索、事件、名單與 campaign 資料在系統之間的傳遞方式。",
-        },
-        {
-          name: "QA 與維護",
-          description:
-            "檢查表單、連結、分析事件、響應式表現與上線準備度。",
+            "透過輕量系統、模板與流程邏輯減少重複性的行銷任務。",
         },
       ],
     }),
@@ -1212,15 +1003,33 @@ export const skillCategories: SkillCategory[] = [
       title: "Creative & Content",
       titleLines: ["Creative", "& Content"],
       rubric: "Content",
-      note: "Copy, concepts, and assets shaped for attention, clarity, and brand memory.",
-      folio: "Copy / Concepts / Assets",
+      note: "Marketing assets shaped for clarity, attention, and channel fit.",
+      folio: "Design / Social / Video",
       summary:
-        "Creative and content work turns strategy into messages, concepts, and assets people can actually engage with. I use it to shape campaigns, write copy, coordinate production, and evaluate creative performance.",
+        "Creative and content work turns marketing strategy into visual assets, social creatives, presentations, and video content that can support campaigns across channels.",
       tools: [
         {
           name: "Canva",
           description:
-            "Fast visual layouts, campaign assets, and presentation-ready creative drafts.",
+            "Fast visual layouts, social creatives, campaign assets, and presentation-ready drafts.",
+          icon: "content",
+        },
+        {
+          name: "Adobe Premiere Pro",
+          description:
+            "Video editing, timeline refinement, and polished marketing content production.",
+          icon: "content",
+        },
+        {
+          name: "Adobe InDesign",
+          description:
+            "Editorial layouts, presentation materials, and structured print or digital documents.",
+          icon: "content",
+        },
+        {
+          name: "Affinity Publisher",
+          description:
+            "Page layout, publication design, and polished marketing collateral preparation.",
           icon: "content",
         },
         {
@@ -1229,65 +1038,66 @@ export const skillCategories: SkillCategory[] = [
             "Short-form video editing, social content assembly, and lightweight motion edits.",
           icon: "content",
         },
-        {
-          name: "Final Cut Pro",
-          description:
-            "Video editing, timeline refinement, and polished campaign content production.",
-          icon: "content",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "Creative briefs, copy drafts, content calendars, and stakeholder review documents.",
-          icon: "document",
-        },
       ],
-      detailKicker: "Production practice",
+      detailKicker: "Creative production",
       details: [
         {
-          name: "Creative Briefs",
+          name: "Visual Content Design",
           description:
-            "Framing audience, offer, message, proof, constraints, and deliverables before production starts.",
+            "Create clear visual layouts that support campaign messaging and brand presentation.",
         },
         {
-          name: "Ad Concepts",
+          name: "Social Media Creatives",
           description:
-            "Developing campaign ideas that can flex across formats, audiences, and testing plans.",
+            "Develop social-first assets for paid, organic, and campaign communication needs.",
         },
         {
-          name: "Copywriting",
+          name: "Presentation Design",
           description:
-            "Writing headlines, ad copy, landing page sections, email copy, and concise product language.",
+            "Turn ideas, insights, and campaign plans into structured visual presentation materials.",
         },
         {
-          name: "Production Planning",
+          name: "Video Editing",
           description:
-            "Coordinating asset lists, deadlines, format needs, review rounds, and launch dependencies.",
+            "Edit short and long-form marketing videos for clarity, rhythm, and platform fit.",
         },
         {
-          name: "Asset QA",
+          name: "Marketing Assets",
           description:
-            "Reviewing copy, dimensions, hierarchy, destination links, naming, and campaign alignment.",
-        },
-        {
-          name: "Creative Analysis",
-          description:
-            "Reading performance patterns to identify which messages, hooks, and formats deserve more investment.",
+            "Prepare campaign graphics, documents, and content assets for practical marketing use.",
         },
       ],
     }, {
       title: "内容创作",
       titleLines: ["内容", "创作"],
       rubric: "内容",
-      note: "把策略转化为清晰、有记忆点、可执行的内容与创意资产。",
-      folio: "文案 / 概念 / 资产",
+      note: "为清晰表达、注意力与渠道适配制作营销内容资产。",
+      folio: "设计 / 社交 / 视频",
       summary:
-        "内容创作把策略转化为用户能够理解和互动的信息、概念与资产。我用它塑造 campaign、撰写文案、协调制作并复盘创意表现。",
+        "内容创作把营销策略转化为视觉资产、社交创意、演示材料与视频内容，用于支持不同渠道的 campaign 执行。",
       tools: [
         {
           name: "Canva",
           description:
-            "用于快速视觉排版、campaign 资产与可展示的创意草稿。",
+            "用于快速视觉排版、社交创意、campaign 资产与演示草稿。",
+          icon: "content",
+        },
+        {
+          name: "Adobe Premiere Pro",
+          description:
+            "用于视频剪辑、时间线精修与更完整的营销内容制作。",
+          icon: "content",
+        },
+        {
+          name: "Adobe InDesign",
+          description:
+            "用于编辑式排版、演示材料，以及结构化印刷或数字文档。",
+          icon: "content",
+        },
+        {
+          name: "Affinity Publisher",
+          description:
+            "用于页面排版、出版物设计与精修营销物料准备。",
           icon: "content",
         },
         {
@@ -1296,65 +1106,66 @@ export const skillCategories: SkillCategory[] = [
             "用于短视频剪辑、社交内容组装与轻量动效编辑。",
           icon: "content",
         },
-        {
-          name: "Final Cut Pro",
-          description:
-            "用于视频剪辑、时间线精修与更完整的 campaign 内容制作。",
-          icon: "content",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "用于创意 brief、文案草稿、内容日历与 stakeholder 审阅文档。",
-          icon: "document",
-        },
       ],
-      detailKicker: "内容实践",
+      detailKicker: "内容制作",
       details: [
         {
-          name: "创意 Brief",
+          name: "视觉内容设计",
           description:
-            "在制作开始前明确受众、offer、信息、证据、限制与交付物。",
+            "制作支持 campaign 信息表达与品牌呈现的清晰视觉版式。",
         },
         {
-          name: "广告概念",
+          name: "社交媒体创意",
           description:
-            "发展可以适配不同格式、受众与测试计划的 campaign idea。",
+            "为付费、自然与 campaign 传播需求制作适合社交平台的资产。",
         },
         {
-          name: "文案写作",
+          name: "演示设计",
           description:
-            "撰写标题、广告文案、落地页段落、邮件文案与简洁产品表达。",
+            "把想法、洞察与 campaign 计划整理成结构化视觉演示材料。",
         },
         {
-          name: "制作规划",
+          name: "视频剪辑",
           description:
-            "协调资产清单、时间节点、格式需求、审阅轮次与上线依赖。",
+            "围绕清晰度、节奏与平台适配剪辑短视频和较完整的营销视频。",
         },
         {
-          name: "资产 QA",
+          name: "营销资产",
           description:
-            "检查文案、尺寸、层级、跳转链接、命名与 campaign 一致性。",
-        },
-        {
-          name: "创意分析",
-          description:
-            "阅读表现模式，识别值得继续投入的信息、hook 与内容格式。",
+            "准备 campaign 图像、文档与内容资产，用于实际营销执行。",
         },
       ],
     }, {
       title: "內容創作",
       titleLines: ["內容", "創作"],
       rubric: "內容",
-      note: "把策略轉化為清晰、有記憶點、可執行的內容與創意資產。",
-      folio: "文案 / 概念 / 資產",
+      note: "為清晰表達、注意力與渠道適配製作行銷內容資產。",
+      folio: "設計 / 社群 / 影片",
       summary:
-        "內容創作把策略轉化為使用者能夠理解和互動的訊息、概念與資產。我用它塑造 campaign、撰寫文案、協調製作並復盤創意表現。",
+        "內容創作把行銷策略轉化為視覺資產、社群創意、簡報材料與影片內容，用於支持不同渠道的 campaign 執行。",
       tools: [
         {
           name: "Canva",
           description:
-            "用於快速視覺排版、campaign 資產與可展示的創意草稿。",
+            "用於快速視覺排版、社群創意、campaign 資產與簡報草稿。",
+          icon: "content",
+        },
+        {
+          name: "Adobe Premiere Pro",
+          description:
+            "用於影片剪輯、時間線精修與更完整的行銷內容製作。",
+          icon: "content",
+        },
+        {
+          name: "Adobe InDesign",
+          description:
+            "用於編輯式排版、簡報材料，以及結構化印刷或數位文件。",
+          icon: "content",
+        },
+        {
+          name: "Affinity Publisher",
+          description:
+            "用於頁面排版、出版物設計與精修行銷物料準備。",
           icon: "content",
         },
         {
@@ -1363,50 +1174,33 @@ export const skillCategories: SkillCategory[] = [
             "用於短影音剪輯、社群內容組裝與輕量動效編輯。",
           icon: "content",
         },
-        {
-          name: "Final Cut Pro",
-          description:
-            "用於影片剪輯、時間線精修與更完整的 campaign 內容製作。",
-          icon: "content",
-        },
-        {
-          name: "Microsoft Office",
-          description:
-            "用於創意 brief、文案草稿、內容日曆與 stakeholder 審閱文件。",
-          icon: "document",
-        },
       ],
-      detailKicker: "內容實踐",
+      detailKicker: "內容製作",
       details: [
         {
-          name: "創意 Brief",
+          name: "視覺內容設計",
           description:
-            "在製作開始前明確受眾、offer、訊息、證據、限制與交付物。",
+            "製作支持 campaign 訊息表達與品牌呈現的清晰視覺版式。",
         },
         {
-          name: "廣告概念",
+          name: "社群媒體創意",
           description:
-            "發展可以適配不同格式、受眾與測試計畫的 campaign idea。",
+            "為付費、自然與 campaign 傳播需求製作適合社群平台的資產。",
         },
         {
-          name: "文案寫作",
+          name: "簡報設計",
           description:
-            "撰寫標題、廣告文案、落地頁段落、郵件文案與簡潔產品表達。",
+            "把想法、洞察與 campaign 計畫整理成結構化視覺簡報材料。",
         },
         {
-          name: "製作規劃",
+          name: "影片剪輯",
           description:
-            "協調資產清單、時間節點、格式需求、審閱輪次與上線依賴。",
+            "圍繞清晰度、節奏與平台適配剪輯短影音和較完整的行銷影片。",
         },
         {
-          name: "資產 QA",
+          name: "行銷資產",
           description:
-            "檢查文案、尺寸、層級、跳轉連結、命名與 campaign 一致性。",
-        },
-        {
-          name: "創意分析",
-          description:
-            "閱讀表現模式，識別值得繼續投入的訊息、hook 與內容格式。",
+            "準備 campaign 圖像、文件與內容資產，用於實際行銷執行。",
         },
       ],
     }),
@@ -1428,7 +1222,7 @@ export const skills: SkillCard[] = [
     id: "more",
     type: "more",
     href: "/skills",
-    translations: skillTitle("More"),
+    translations: skillTitle("More", "更多", "更多"),
   },
 ];
 

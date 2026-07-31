@@ -5,14 +5,14 @@ import { SkillsPageContent } from "@/components/skills/skills-page-content";
 export const metadata: Metadata = {
   title: "Skills",
   description:
-    "A poster index of the six skill categories behind Kristy Shi's marketing, growth, analytics, web, strategy, and creative work.",
+    "A poster index of the six skill categories behind Kristy Shi's marketing, analytics, growth, strategy, technical, and creative work.",
   alternates: {
     canonical: "/skills",
   },
   openGraph: {
     title: "Skills",
     description:
-      "A poster index of the six skill categories behind Kristy Shi's marketing, growth, analytics, web, strategy, and creative work.",
+      "A poster index of the six skill categories behind Kristy Shi's marketing, analytics, growth, strategy, technical, and creative work.",
     url: "/skills",
     siteName: "Kristy Shi",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Skills",
     description:
-      "A poster index of the six skill categories behind Kristy Shi's marketing, growth, analytics, web, strategy, and creative work.",
+      "A poster index of the six skill categories behind Kristy Shi's marketing, analytics, growth, strategy, technical, and creative work.",
   },
 };
 
