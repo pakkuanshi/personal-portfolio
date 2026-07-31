@@ -31,7 +31,7 @@ function ProjectVisual({
     return (
       <img
         alt=""
-        className="h-full w-full bg-white object-contain p-12 transition duration-700 ease-out sm:p-14"
+        className="h-full w-full bg-white object-contain p-12 transition duration-700 ease-out sm:p-14 lg:p-16"
         src={project.image}
       />
     );
@@ -79,23 +79,26 @@ export function ProjectsArchiveContent() {
 
       <section
         aria-label={pageCopy.title}
-        className="site-container mt-20 grid max-w-6xl gap-24 md:mt-24 md:gap-32"
+        className="site-container mt-14 grid max-w-6xl gap-16 md:mt-16 md:gap-20 lg:gap-24"
       >
         {experienceProjects.map((project, index) => {
           const title = getLocalizedValue(project.title, locale);
           const overview = getLocalizedValue(project.overview, locale);
           const year = getLocalizedValue(project.year, locale);
           const imageFirst = index % 2 === 0;
+          const articleGridClassName = imageFirst
+            ? "md:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)]"
+            : "md:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)]";
 
           return (
             <article
-              className="grid scroll-mt-28 gap-9 md:scroll-mt-32 md:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] md:items-center md:gap-14 lg:gap-20"
+              className={`grid scroll-mt-28 gap-7 md:scroll-mt-32 md:items-center md:gap-10 lg:gap-14 ${articleGridClassName}`}
               id={project.id}
               key={project.id}
             >
               <div
                 aria-hidden="true"
-                className={`relative aspect-[1.24] overflow-hidden rounded-[1.05rem] border border-[hsl(34_20%_76%/0.44)] bg-[hsl(38_34%_88%)] shadow-[0_20px_56px_hsl(30_18%_20%/0.08)] transition duration-500 ease-out dark:border-[hsl(34_24%_70%/0.18)] dark:bg-[hsl(40_27%_79%)] dark:shadow-[0_24px_64px_hsl(18_34%_4%/0.46)] ${
+                className={`relative aspect-[1.34] overflow-hidden rounded-[1.05rem] border border-[hsl(34_20%_76%/0.44)] bg-[hsl(38_34%_88%)] shadow-[0_20px_56px_hsl(30_18%_20%/0.08)] transition duration-500 ease-out dark:border-[hsl(34_24%_70%/0.18)] dark:bg-[hsl(40_27%_79%)] dark:shadow-[0_24px_64px_hsl(18_34%_4%/0.46)] ${
                   imageFirst ? "md:order-1" : "md:order-2"
                 }`}
               >
@@ -113,7 +116,7 @@ export function ProjectsArchiveContent() {
                 <h2 className="mt-5 font-serif text-[clamp(2.2rem,4vw,4.25rem)] leading-[1.08] text-[hsl(220_18%_14%/0.9)] dark:text-[hsl(42_31%_88%/0.9)]">
                   {title}
                 </h2>
-                <p className="mt-6 text-sm leading-7 text-[hsl(220_9%_32%/0.7)] dark:text-[hsl(38_18%_78%/0.66)] md:text-base md:leading-8">
+                <p className="mt-4 text-sm leading-7 text-[hsl(220_9%_32%/0.7)] dark:text-[hsl(38_18%_78%/0.66)] md:text-base md:leading-8">
                   {overview}
                 </p>
               </div>
