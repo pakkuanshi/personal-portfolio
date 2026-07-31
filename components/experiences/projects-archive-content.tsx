@@ -69,7 +69,9 @@ export function ProjectsArchiveContent() {
         >
           ← {experienceCopy.backLabel}
         </Link>
-        <h1 className="experience-polaroid-title">{pageCopy.title}</h1>
+        <h1 className="max-w-5xl font-serif text-[clamp(2.6rem,5.2vw,4.35rem)] font-medium leading-[1.02] tracking-normal text-balance text-[hsl(220_18%_14%/0.92)] dark:text-[hsl(42_31%_88%/0.94)]">
+          {pageCopy.title}
+        </h1>
         <p className="mt-7 max-w-2xl text-sm leading-7 text-[hsl(220_9%_33%/0.7)] dark:text-[hsl(38_18%_78%/0.68)] md:mt-8 md:text-base md:leading-8">
           {intro}
         </p>
