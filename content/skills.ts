@@ -925,7 +925,7 @@ export const skillCategories: SkillCategory[] = [
           icon: "automation",
         },
         {
-          name: "AI Development Tools",
+          name: "AI 工具",
           meta: "Cursor · Claude Code · Codex · etc.",
           description:
             "使用 Cursor、Claude Code、Codex 等 AI 编程助手，加速开发、自动化重复任务并提升工作流效率。",
@@ -972,7 +972,7 @@ export const skillCategories: SkillCategory[] = [
           icon: "automation",
         },
         {
-          name: "AI Development Tools",
+          name: "AI 工具",
           meta: "Cursor · Claude Code · Codex · etc.",
           description:
             "使用 Cursor、Claude Code、Codex 等 AI 編程助手，加速開發、自動化重複任務並提升工作流效率。",
