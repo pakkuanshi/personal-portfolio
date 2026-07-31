@@ -58,7 +58,7 @@ export const experienceIndexContent: Record<Locale, ExperienceIndexContent> = {
           {
             id: "lovart",
             title: "Lovart",
-            role: "SEO Digital Marketing Intern",
+            role: "Growth Marketing Intern",
             location: "Beijing, China",
             timePeriod: "May 2026 to present",
             description:
@@ -157,7 +157,7 @@ export const experienceIndexContent: Record<Locale, ExperienceIndexContent> = {
           {
             id: "lovart",
             title: "Lovart",
-            role: "SEO数字营销实习生",
+            role: "增长营销实习生",
             location: "北京，中国",
             timePeriod: "2026年5月至今",
             description: "支持内容可见度与增长的 SEO 和数字营销工作。",
@@ -250,7 +250,7 @@ export const experienceIndexContent: Record<Locale, ExperienceIndexContent> = {
           {
             id: "lovart",
             title: "Lovart",
-            role: "SEO數位行銷實習生",
+            role: "增長行銷實習生",
             location: "北京，中國",
             timePeriod: "2026年5月至今",
             description: "支持內容可見度與成長的 SEO 和數位行銷工作。",
