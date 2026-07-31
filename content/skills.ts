@@ -494,7 +494,7 @@ export const skillCategories: SkillCategory[] = [
     }, {
       title: "市場行銷分析",
       titleLines: ["市場行銷", "分析"],
-      rubric: "資料",
+      rubric: "數據",
       note: "把 campaign 資料轉化為報告、洞察與實際決策。",
       folio: "衡量 / 報告 / 洞察",
       summary:
