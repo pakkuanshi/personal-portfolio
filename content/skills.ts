@@ -1117,7 +1117,7 @@ export const skillCategories: SkillCategory[] = [
         {
           name: "社交媒体创意",
           description:
-            "为付费、自然与 campaign 传播需求制作适合社交平台的资产。",
+            "开发以社交媒体为先导的素材，满足付费、自然流量和营销活动传播需求。",
         },
         {
           name: "演示设计",
@@ -1185,7 +1185,7 @@ export const skillCategories: SkillCategory[] = [
         {
           name: "社群媒體創意",
           description:
-            "為付費、自然與 campaign 傳播需求製作適合社群平台的資產。",
+            "開發以社群媒體為先導的素材，滿足付費、自然流量和行銷活動傳播需求。",
         },
         {
           name: "簡報設計",
