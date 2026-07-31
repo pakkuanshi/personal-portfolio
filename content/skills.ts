@@ -859,7 +859,7 @@ export const skillCategories: SkillCategory[] = [
     translations: categoryCopy({
       title: "Technical Skills",
       titleLines: ["Technical", "Skills"],
-      rubric: "AI",
+      rubric: "Coding & AI",
       note: "AI-assisted workflows and technical fluency for modern marketing operations.",
       folio: "AI / Prompts / Workflow",
       summary:
@@ -906,7 +906,7 @@ export const skillCategories: SkillCategory[] = [
     }, {
       title: "技术技能",
       titleLines: ["技术", "技能"],
-      rubric: "AI",
+      rubric: "编程与 AI",
       note: "用 AI 工作流与技术理解支持更高效的现代营销执行。",
       folio: "AI / 提示词 / 流程",
       summary:
@@ -953,7 +953,7 @@ export const skillCategories: SkillCategory[] = [
     }, {
       title: "技術技能",
       titleLines: ["技術", "技能"],
-      rubric: "AI",
+      rubric: "編程與 AI",
       note: "用 AI 工作流與技術理解支持更高效的現代行銷執行。",
       folio: "AI / 提示詞 / 流程",
       summary:
