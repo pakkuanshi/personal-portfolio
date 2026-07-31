@@ -125,9 +125,9 @@ export const dictionary = {
       },
       contact: {
         eyebrow: "Contact",
-        title: "A simple contact page will live here.",
+        title: "Let's Connect.",
         description:
-          "This route is reserved for email, professional links, and a future contact form if the site needs one.",
+          "Whether you're hiring, looking for a collaborator, or simply want to chat about digital marketing, analytics, AI products, or new opportunities, I'd love to hear from you.",
       },
     },
     caseStudy: {
@@ -252,8 +252,9 @@ export const dictionary = {
       },
       contact: {
         eyebrow: "联系",
-        title: "这里将保留一个简洁的联系页面。",
-        description: "这个页面将用于邮箱、职业链接，以及未来可能加入的联系表单。",
+        title: "Let's Connect.",
+        description:
+          "如果你正在招聘、寻找合作者，或想聊聊数字营销、数据分析、AI 产品与新的机会，欢迎联系我。",
       },
     },
     caseStudy: {
@@ -378,8 +379,9 @@ export const dictionary = {
       },
       contact: {
         eyebrow: "聯絡",
-        title: "這裡將保留一個簡潔的聯絡頁面。",
-        description: "這個頁面將用於信箱、職涯連結，以及未來可能加入的聯絡表單。",
+        title: "Let's Connect.",
+        description:
+          "如果你正在招聘、尋找合作者，或想聊聊數位行銷、數據分析、AI 產品與新的機會，歡迎聯絡我。",
       },
     },
     caseStudy: {
