@@ -226,10 +226,136 @@ export const skillCategories: SkillCategory[] = [
       title: "广告投放",
       titleLines: ["广告", "投放"],
       rubric: "广告",
+      note: "围绕可衡量获客目标组织预算、受众与信息结构。",
+      folio: "获客 / 测试 / 放量",
+      summary:
+        "广告投放用于支持需要清晰受众、可衡量预算与转化路径的获客活动。我用它把受众策略、渠道搭建、测试节奏和效果分析连接起来。",
+      tools: [
+        {
+          name: "Google Ads",
+          description:
+            "用于搜索广告管理、关键词优化与投放效果衡量。",
+          icon: "advertising",
+        },
+        {
+          name: "Meta Ads",
+          description:
+            "用于付费社交受众测试、创意迭代与转化型广告搭建。",
+          icon: "advertising",
+        },
+        {
+          name: "YouTube Ads",
+          description:
+            "用于视频广告规划、受众触达与认知到转化目标的效果复盘。",
+          icon: "content",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "用于分析付费媒体路径中的流量、转化与 campaign 质量。",
+          icon: "analytics",
+        },
+      ],
+      detailKicker: "获客实践",
+      details: [
+        {
+          name: "渠道规划",
+          description:
+            "将业务目标转化为媒体组合、上线顺序与预算分配。",
+        },
+        {
+          name: "广告架构",
+          description:
+            "围绕意图、漏斗阶段、受众质量与学习速度搭建账户结构。",
+        },
+        {
+          name: "搜索广告",
+          description:
+            "管理关键词策略、广告组映射、匹配方式、搜索词清理与落地页匹配。",
+        },
+        {
+          name: "社交广告",
+          description:
+            "处理创意测试、受众细分、再营销逻辑与 offer-message 匹配。",
+        },
+        {
+          name: "预算节奏",
+          description:
+            "监测花费、效率与转化量，让实验可以在不偏离目标的情况下放量。",
+        },
+        {
+          name: "转化优化",
+          description:
+            "结合广告、表单、页面与漏斗信号，提升获客质量。",
+        },
+      ],
     }, {
       title: "廣告投放",
       titleLines: ["廣告", "投放"],
       rubric: "廣告",
+      note: "圍繞可衡量獲客目標組織預算、受眾與訊息架構。",
+      folio: "獲客 / 測試 / 放量",
+      summary:
+        "廣告投放用於支持需要清晰受眾、可衡量預算與轉化路徑的獲客活動。我用它把受眾策略、渠道搭建、測試節奏和成效分析連接起來。",
+      tools: [
+        {
+          name: "Google Ads",
+          description:
+            "用於搜尋廣告管理、關鍵字優化與投放成效衡量。",
+          icon: "advertising",
+        },
+        {
+          name: "Meta Ads",
+          description:
+            "用於付費社群受眾測試、創意迭代與轉化型廣告搭建。",
+          icon: "advertising",
+        },
+        {
+          name: "YouTube Ads",
+          description:
+            "用於影片廣告規劃、受眾觸達與認知到轉化目標的成效復盤。",
+          icon: "content",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "用於分析付費媒體路徑中的流量、轉化與 campaign 品質。",
+          icon: "analytics",
+        },
+      ],
+      detailKicker: "獲客實踐",
+      details: [
+        {
+          name: "渠道規劃",
+          description:
+            "將業務目標轉化為媒體組合、上線順序與預算分配。",
+        },
+        {
+          name: "廣告架構",
+          description:
+            "圍繞意圖、漏斗階段、受眾品質與學習速度搭建帳戶結構。",
+        },
+        {
+          name: "搜尋廣告",
+          description:
+            "管理關鍵字策略、廣告組映射、匹配方式、搜尋詞清理與落地頁匹配。",
+        },
+        {
+          name: "社群廣告",
+          description:
+            "處理創意測試、受眾細分、再行銷邏輯與 offer-message 匹配。",
+        },
+        {
+          name: "預算節奏",
+          description:
+            "監測花費、效率與轉化量，讓實驗可以在不偏離目標的情況下放量。",
+        },
+        {
+          name: "轉化優化",
+          description:
+            "結合廣告、表單、頁面與漏斗訊號，提升獲客品質。",
+        },
+      ],
     }),
   },
   {
@@ -313,10 +439,148 @@ export const skillCategories: SkillCategory[] = [
       title: "市场营销分析",
       titleLines: ["市场营销", "分析"],
       rubric: "分析",
+      note: "为增长决策建立清晰、可读、可执行的衡量系统。",
+      folio: "归因 / 看板 / 洞察",
+      summary:
+        "市场营销分析把 campaign 活动转化为可用于判断的证据。我用它建立汇报逻辑、解读表现信号，并把数据转化为下一步建议。",
+      tools: [
+        {
+          name: "SQL",
+          description:
+            "用于营销数据查询、报告整理与 campaign 表现分析。",
+          icon: "data",
+        },
+        {
+          name: "Python",
+          description:
+            "用于数据清理、轻量分析与可重复的报告流程。",
+          icon: "automation",
+        },
+        {
+          name: "R 语言",
+          description:
+            "用于统计分析、结构化探索与偏研究型的数据复盘。",
+          icon: "analytics",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "用于流量来源分析、转化复盘与受众行为报告。",
+          icon: "analytics",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "用于洞察整理、报告表格与面向 stakeholder 的分析材料。",
+          icon: "document",
+        },
+      ],
+      detailKicker: "衡量实践",
+      details: [
+        {
+          name: "衡量规划",
+          description:
+            "在 campaign 上线前定义事件、目标、来源逻辑与报告层级。",
+        },
+        {
+          name: "漏斗分析",
+          description:
+            "定位访客、线索与客户路径中的流失、延迟与质量变化。",
+        },
+        {
+          name: "看板设计",
+          description:
+            "把分散指标整理成适合周度决策与汇报的可读视图。",
+        },
+        {
+          name: "归因复盘",
+          description:
+            "比较平台、分析工具与 CRM 信号，而不把单一报告当作绝对事实。",
+        },
+        {
+          name: "实验解读",
+          description:
+            "结合背景、限制、信心程度与下一步决策总结测试结果。",
+        },
+        {
+          name: "追踪 QA",
+          description:
+            "检查 UTM 标准、事件捕捉、转化路径与报告一致性。",
+        },
+      ],
     }, {
       title: "市場行銷分析",
       titleLines: ["市場行銷", "分析"],
       rubric: "分析",
+      note: "為成長決策建立清晰、可讀、可執行的衡量系統。",
+      folio: "歸因 / 看板 / 洞察",
+      summary:
+        "市場行銷分析把 campaign 活動轉化為可用於判斷的證據。我用它建立報告邏輯、解讀表現訊號，並把資料轉化為下一步建議。",
+      tools: [
+        {
+          name: "SQL",
+          description:
+            "用於行銷資料查詢、報告整理與 campaign 表現分析。",
+          icon: "data",
+        },
+        {
+          name: "Python",
+          description:
+            "用於資料清理、輕量分析與可重複的報告流程。",
+          icon: "automation",
+        },
+        {
+          name: "R 語言",
+          description:
+            "用於統計分析、結構化探索與偏研究型的資料復盤。",
+          icon: "analytics",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "用於流量來源分析、轉化復盤與受眾行為報告。",
+          icon: "analytics",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "用於洞察整理、報告表格與面向 stakeholder 的分析材料。",
+          icon: "document",
+        },
+      ],
+      detailKicker: "衡量實踐",
+      details: [
+        {
+          name: "衡量規劃",
+          description:
+            "在 campaign 上線前定義事件、目標、來源邏輯與報告層級。",
+        },
+        {
+          name: "漏斗分析",
+          description:
+            "定位訪客、線索與客戶路徑中的流失、延遲與品質變化。",
+        },
+        {
+          name: "看板設計",
+          description:
+            "把分散指標整理成適合週度決策與匯報的可讀視圖。",
+        },
+        {
+          name: "歸因復盤",
+          description:
+            "比較平台、分析工具與 CRM 訊號，而不把單一報告當作絕對事實。",
+        },
+        {
+          name: "實驗解讀",
+          description:
+            "結合背景、限制、信心程度與下一步決策總結測試結果。",
+        },
+        {
+          name: "追蹤 QA",
+          description:
+            "檢查 UTM 標準、事件捕捉、轉化路徑與報告一致性。",
+        },
+      ],
     }),
   },
   {
@@ -394,10 +658,136 @@ export const skillCategories: SkillCategory[] = [
       title: "SEO 与增长",
       titleLines: ["SEO", "与增长"],
       rubric: "搜索",
+      note: "连接搜索可见度、内容意图与可持续增长路径。",
+      folio: "搜索 / 内容 / CRO",
+      summary:
+        "SEO 与增长把自然搜索可见度、内容结构和转化路径连接起来。我用它识别需求、优化页面，并建立能够持续积累的发现系统。",
+      tools: [
+        {
+          name: "Semrush",
+          description:
+            "用于关键词研究、竞品分析与 SEO 机会识别。",
+          icon: "search",
+        },
+        {
+          name: "Google Search Console",
+          description:
+            "用于搜索表现复盘、索引检查与 query 层面的优化。",
+          icon: "search",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "用于自然流量行为、转化路径与落地页表现分析。",
+          icon: "analytics",
+        },
+        {
+          name: "WordPress",
+          description:
+            "用于内容发布、页面更新、metadata 编辑与网站结构支持。",
+          icon: "web",
+        },
+      ],
+      detailKicker: "自然增长实践",
+      details: [
+        {
+          name: "关键词研究",
+          description:
+            "根据意图、竞争程度与业务价值识别相关搜索机会。",
+        },
+        {
+          name: "技术 SEO 检查",
+          description:
+            "检查可抓取性、索引、内链、metadata、速度与结构化内容健康度。",
+        },
+        {
+          name: "内容 Brief",
+          description:
+            "创建连接搜索意图、品牌观点与转化目标的内容 brief。",
+        },
+        {
+          name: "页面优化",
+          description:
+            "优化页面层级、标题、metadata、内链与回答质量。",
+        },
+        {
+          name: "增长实验",
+          description:
+            "围绕 offer、落地页、表单与流量路径设计轻量测试。",
+        },
+        {
+          name: "搜索表现分析",
+          description:
+            "把排名、曝光、点击率与辅助转化作为一个整体运营图景来解读。",
+        },
+      ],
     }, {
       title: "SEO 與增長",
       titleLines: ["SEO", "與增長"],
       rubric: "搜尋",
+      note: "連接搜尋可見度、內容意圖與可持續成長路徑。",
+      folio: "搜尋 / 內容 / CRO",
+      summary:
+        "SEO 與增長把自然搜尋可見度、內容結構和轉化路徑連接起來。我用它識別需求、優化頁面，並建立能夠持續累積的發現系統。",
+      tools: [
+        {
+          name: "Semrush",
+          description:
+            "用於關鍵字研究、競品分析與 SEO 機會識別。",
+          icon: "search",
+        },
+        {
+          name: "Google Search Console",
+          description:
+            "用於搜尋表現復盤、索引檢查與 query 層面的優化。",
+          icon: "search",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "用於自然流量行為、轉化路徑與落地頁表現分析。",
+          icon: "analytics",
+        },
+        {
+          name: "WordPress",
+          description:
+            "用於內容發布、頁面更新、metadata 編輯與網站結構支持。",
+          icon: "web",
+        },
+      ],
+      detailKicker: "自然成長實踐",
+      details: [
+        {
+          name: "關鍵字研究",
+          description:
+            "根據意圖、競爭程度與業務價值識別相關搜尋機會。",
+        },
+        {
+          name: "技術 SEO 檢查",
+          description:
+            "檢查可抓取性、索引、內鏈、metadata、速度與結構化內容健康度。",
+        },
+        {
+          name: "內容 Brief",
+          description:
+            "建立連接搜尋意圖、品牌觀點與轉化目標的內容 brief。",
+        },
+        {
+          name: "頁面優化",
+          description:
+            "優化頁面層級、標題、metadata、內鏈與回答品質。",
+        },
+        {
+          name: "成長實驗",
+          description:
+            "圍繞 offer、落地頁、表單與流量路徑設計輕量測試。",
+        },
+        {
+          name: "搜尋表現分析",
+          description:
+            "把排名、曝光、點擊率與輔助轉化作為一個整體營運圖景來解讀。",
+        },
+      ],
     }),
   },
   {
@@ -475,10 +865,136 @@ export const skillCategories: SkillCategory[] = [
       title: "策略规划",
       titleLines: ["策略", "规划"],
       rubric: "策略",
+      note: "用市场背景、受众洞察与信息逻辑支撑传播判断。",
+      folio: "受众 / 市场 / 叙事",
+      summary:
+        "策略规划定义 campaign 执行前的核心判断。我用研究、受众语境和竞品信号来塑造定位、信息结构与传播计划。",
+      tools: [
+        {
+          name: "Desk Research",
+          description:
+            "用于收集市场、受众与竞品背景，支持策略判断。",
+          icon: "research",
+        },
+        {
+          name: "Google Forms",
+          description:
+            "用于轻量问卷收集、受众反馈与结构化回答整理。",
+          icon: "document",
+        },
+        {
+          name: "Google Trends",
+          description:
+            "用于需求趋势观察、话题验证与传播时机判断。",
+          icon: "search",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "用于规划文档、研究综合与可汇报的策略叙事。",
+          icon: "strategy",
+        },
+      ],
+      detailKicker: "策略实践",
+      details: [
+        {
+          name: "市场研究",
+          description:
+            "从受众行为、品类规律、竞品动作与用户语言中提炼模式。",
+        },
+        {
+          name: "竞品分析",
+          description:
+            "研究定位、offer 设计、渠道组合、信息表达与空白机会。",
+        },
+        {
+          name: "受众细分",
+          description:
+            "根据需求、动机、购买触发点与准备程度定义受众分组。",
+        },
+        {
+          name: "用户旅程",
+          description:
+            "把认知、考虑、决策与留存阶段连接成清晰路径。",
+        },
+        {
+          name: "信息策略",
+          description:
+            "打磨价值主张、证据点、用户顾虑与 campaign 叙事。",
+        },
+        {
+          name: "规划工作坊",
+          description:
+            "把 stakeholder 输入转化为优先级、假设与执行方向。",
+        },
+      ],
     }, {
       title: "策略規劃",
       titleLines: ["策略", "規劃"],
       rubric: "策略",
+      note: "用市場背景、受眾洞察與訊息邏輯支撐傳播判斷。",
+      folio: "受眾 / 市場 / 敘事",
+      summary:
+        "策略規劃定義 campaign 執行前的核心判斷。我用研究、受眾語境和競品訊號來塑造定位、訊息結構與傳播計畫。",
+      tools: [
+        {
+          name: "Desk Research",
+          description:
+            "用於收集市場、受眾與競品背景，支持策略判斷。",
+          icon: "research",
+        },
+        {
+          name: "Google Forms",
+          description:
+            "用於輕量問卷收集、受眾回饋與結構化回答整理。",
+          icon: "document",
+        },
+        {
+          name: "Google Trends",
+          description:
+            "用於需求趨勢觀察、話題驗證與傳播時機判斷。",
+          icon: "search",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "用於規劃文件、研究綜合與可匯報的策略敘事。",
+          icon: "strategy",
+        },
+      ],
+      detailKicker: "策略實踐",
+      details: [
+        {
+          name: "市場研究",
+          description:
+            "從受眾行為、品類規律、競品動作與使用者語言中提煉模式。",
+        },
+        {
+          name: "競品分析",
+          description:
+            "研究定位、offer 設計、渠道組合、訊息表達與空白機會。",
+        },
+        {
+          name: "受眾細分",
+          description:
+            "根據需求、動機、購買觸發點與準備程度定義受眾分組。",
+        },
+        {
+          name: "使用者旅程",
+          description:
+            "把認知、考慮、決策與留存階段連接成清晰路徑。",
+        },
+        {
+          name: "訊息策略",
+          description:
+            "打磨價值主張、證據點、使用者顧慮與 campaign 敘事。",
+        },
+        {
+          name: "規劃工作坊",
+          description:
+            "把 stakeholder 輸入轉化為優先級、假設與執行方向。",
+        },
+      ],
     }),
   },
   {
@@ -556,10 +1072,136 @@ export const skillCategories: SkillCategory[] = [
       title: "网站技术与自动化",
       titleLines: ["网站技术", "与自动化"],
       rubric: "自动化",
+      note: "用页面、工作流与轻量系统支持更顺畅的营销执行。",
+      folio: "页面 / 表单 / 流程",
+      summary:
+        "网站技术与自动化支撑更清晰的营销运营系统。我用它搭建页面、组织工作流，并减少内容、表单与数据交接中的重复劳动。",
+      tools: [
+        {
+          name: "WordPress",
+          description:
+            "用于营销页面更新、CMS 组织与 campaign 内容发布。",
+          icon: "web",
+        },
+        {
+          name: "Python",
+          description:
+            "用于数据清理、重复任务处理与轻量工作流支持。",
+          icon: "automation",
+        },
+        {
+          name: "AI 助手",
+          description:
+            "用于草稿支持、流程构思、内容运营与结构化任务加速。",
+          icon: "automation",
+        },
+        {
+          name: "表单流程",
+          description:
+            "用于提交路由、线索收集结构与后续跟进流程整理。",
+          icon: "document",
+        },
+      ],
+      detailKicker: "系统实践",
+      details: [
+        {
+          name: "落地页系统",
+          description:
+            "围绕 offer 清晰度、证据、转化路径与 campaign 适配设计页面结构。",
+        },
+        {
+          name: "表单流程",
+          description:
+            "规划提交路由、降低填写阻力、捕捉上下文并保持跟进可靠。",
+        },
+        {
+          name: "营销自动化",
+          description:
+            "搭建简单序列、提醒、交接与常用工具之间的数据流转。",
+        },
+        {
+          name: "CMS 运营",
+          description:
+            "组织可复用内容、页面更新、metadata 与发布流程。",
+        },
+        {
+          name: "集成映射",
+          description:
+            "梳理线索、事件、名单与 campaign 数据在系统之间的传递方式。",
+        },
+        {
+          name: "QA 与维护",
+          description:
+            "检查表单、链接、分析事件、响应式表现与上线准备度。",
+        },
+      ],
     }, {
       title: "網站技術與自動化",
       titleLines: ["網站技術", "與自動化"],
       rubric: "自動化",
+      note: "用頁面、工作流與輕量系統支持更順暢的行銷執行。",
+      folio: "頁面 / 表單 / 流程",
+      summary:
+        "網站技術與自動化支撐更清晰的行銷營運系統。我用它搭建頁面、組織工作流，並減少內容、表單與資料交接中的重複勞動。",
+      tools: [
+        {
+          name: "WordPress",
+          description:
+            "用於行銷頁面更新、CMS 組織與 campaign 內容發布。",
+          icon: "web",
+        },
+        {
+          name: "Python",
+          description:
+            "用於資料清理、重複任務處理與輕量工作流支持。",
+          icon: "automation",
+        },
+        {
+          name: "AI 助手",
+          description:
+            "用於草稿支持、流程構思、內容營運與結構化任務加速。",
+          icon: "automation",
+        },
+        {
+          name: "表單流程",
+          description:
+            "用於提交路由、線索收集結構與後續跟進流程整理。",
+          icon: "document",
+        },
+      ],
+      detailKicker: "系統實踐",
+      details: [
+        {
+          name: "落地頁系統",
+          description:
+            "圍繞 offer 清晰度、證據、轉化路徑與 campaign 適配設計頁面結構。",
+        },
+        {
+          name: "表單流程",
+          description:
+            "規劃提交路由、降低填寫阻力、捕捉上下文並保持跟進可靠。",
+        },
+        {
+          name: "行銷自動化",
+          description:
+            "搭建簡單序列、提醒、交接與常用工具之間的資料流轉。",
+        },
+        {
+          name: "CMS 營運",
+          description:
+            "組織可復用內容、頁面更新、metadata 與發布流程。",
+        },
+        {
+          name: "整合映射",
+          description:
+            "梳理線索、事件、名單與 campaign 資料在系統之間的傳遞方式。",
+        },
+        {
+          name: "QA 與維護",
+          description:
+            "檢查表單、連結、分析事件、響應式表現與上線準備度。",
+        },
+      ],
     }),
   },
   {
@@ -637,10 +1279,136 @@ export const skillCategories: SkillCategory[] = [
       title: "内容创作",
       titleLines: ["内容", "创作"],
       rubric: "内容",
+      note: "把策略转化为清晰、有记忆点、可执行的内容与创意资产。",
+      folio: "文案 / 概念 / 资产",
+      summary:
+        "内容创作把策略转化为用户能够理解和互动的信息、概念与资产。我用它塑造 campaign、撰写文案、协调制作并复盘创意表现。",
+      tools: [
+        {
+          name: "Canva",
+          description:
+            "用于快速视觉排版、campaign 资产与可展示的创意草稿。",
+          icon: "content",
+        },
+        {
+          name: "CapCut",
+          description:
+            "用于短视频剪辑、社交内容组装与轻量动效编辑。",
+          icon: "content",
+        },
+        {
+          name: "Final Cut Pro",
+          description:
+            "用于视频剪辑、时间线精修与更完整的 campaign 内容制作。",
+          icon: "content",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "用于创意 brief、文案草稿、内容日历与 stakeholder 审阅文档。",
+          icon: "document",
+        },
+      ],
+      detailKicker: "内容实践",
+      details: [
+        {
+          name: "创意 Brief",
+          description:
+            "在制作开始前明确受众、offer、信息、证据、限制与交付物。",
+        },
+        {
+          name: "广告概念",
+          description:
+            "发展可以适配不同格式、受众与测试计划的 campaign idea。",
+        },
+        {
+          name: "文案写作",
+          description:
+            "撰写标题、广告文案、落地页段落、邮件文案与简洁产品表达。",
+        },
+        {
+          name: "制作规划",
+          description:
+            "协调资产清单、时间节点、格式需求、审阅轮次与上线依赖。",
+        },
+        {
+          name: "资产 QA",
+          description:
+            "检查文案、尺寸、层级、跳转链接、命名与 campaign 一致性。",
+        },
+        {
+          name: "创意分析",
+          description:
+            "阅读表现模式，识别值得继续投入的信息、hook 与内容格式。",
+        },
+      ],
     }, {
       title: "內容創作",
       titleLines: ["內容", "創作"],
       rubric: "內容",
+      note: "把策略轉化為清晰、有記憶點、可執行的內容與創意資產。",
+      folio: "文案 / 概念 / 資產",
+      summary:
+        "內容創作把策略轉化為使用者能夠理解和互動的訊息、概念與資產。我用它塑造 campaign、撰寫文案、協調製作並復盤創意表現。",
+      tools: [
+        {
+          name: "Canva",
+          description:
+            "用於快速視覺排版、campaign 資產與可展示的創意草稿。",
+          icon: "content",
+        },
+        {
+          name: "CapCut",
+          description:
+            "用於短影音剪輯、社群內容組裝與輕量動效編輯。",
+          icon: "content",
+        },
+        {
+          name: "Final Cut Pro",
+          description:
+            "用於影片剪輯、時間線精修與更完整的 campaign 內容製作。",
+          icon: "content",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "用於創意 brief、文案草稿、內容日曆與 stakeholder 審閱文件。",
+          icon: "document",
+        },
+      ],
+      detailKicker: "內容實踐",
+      details: [
+        {
+          name: "創意 Brief",
+          description:
+            "在製作開始前明確受眾、offer、訊息、證據、限制與交付物。",
+        },
+        {
+          name: "廣告概念",
+          description:
+            "發展可以適配不同格式、受眾與測試計畫的 campaign idea。",
+        },
+        {
+          name: "文案寫作",
+          description:
+            "撰寫標題、廣告文案、落地頁段落、郵件文案與簡潔產品表達。",
+        },
+        {
+          name: "製作規劃",
+          description:
+            "協調資產清單、時間節點、格式需求、審閱輪次與上線依賴。",
+        },
+        {
+          name: "資產 QA",
+          description:
+            "檢查文案、尺寸、層級、跳轉連結、命名與 campaign 一致性。",
+        },
+        {
+          name: "創意分析",
+          description:
+            "閱讀表現模式，識別值得繼續投入的訊息、hook 與內容格式。",
+        },
+      ],
     }),
   },
 ];
