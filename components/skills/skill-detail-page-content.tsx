@@ -55,7 +55,7 @@ export function SkillDetailPageContent({ slug }: SkillDetailPageContentProps) {
 
   return (
     <div className="min-h-[calc(100vh-3.25rem)] bg-[hsl(40_25%_97%)] text-[hsl(220_18%_12%)] transition-colors duration-300 dark:bg-[linear-gradient(180deg,hsl(25_25%_10%),hsl(20_26%_8%))] dark:text-[hsl(42_32%_91%)]">
-      <main className="site-container py-24 md:py-28 lg:py-32">
+      <main className="site-container pb-24 pt-20 md:pb-28 md:pt-24 lg:pb-32 lg:pt-28">
         <nav
           aria-label="Skills navigation"
           className="flex items-center justify-between gap-6 text-[0.72rem] uppercase text-[hsl(220_10%_34%/0.58)] dark:text-[hsl(38_18%_78%/0.6)]"
@@ -70,36 +70,20 @@ export function SkillDetailPageContent({ slug }: SkillDetailPageContentProps) {
           <span>{category.number}</span>
         </nav>
 
-        <header className="mt-10 grid gap-8 border-y border-[hsl(34_18%_68%/0.34)] py-10 dark:border-[hsl(38_18%_58%/0.2)] md:mt-12 md:py-12 lg:grid-cols-[0.36fr_1fr] lg:gap-16 lg:py-14">
-          <div className="max-w-xs">
-            <p className="text-[0.72rem] uppercase tracking-normal text-[hsl(220_9%_34%/0.62)] dark:text-[hsl(42_18%_82%/0.62)]">
-              {copy.rubric}
-            </p>
-            <p className="mt-4 text-sm leading-6 text-[hsl(220_9%_32%/0.62)] dark:text-[hsl(38_18%_78%/0.64)]">
-              {copy.folio}
-            </p>
-          </div>
-          <div className="max-w-4xl">
-            <h1 className="font-serif text-[clamp(2.75rem,5.8vw,4.75rem)] font-medium leading-[0.98] tracking-normal text-balance text-[hsl(220_18%_14%/0.92)] dark:text-[hsl(42_31%_88%/0.94)]">
-              {copy.title}
-            </h1>
-            <p className="mt-7 max-w-3xl text-base leading-8 text-[hsl(220_9%_32%/0.72)] dark:text-[hsl(38_18%_78%/0.7)] md:text-[1.05rem]">
-              {copy.summary}
-            </p>
-          </div>
+        <header className="mt-8 border-y border-[hsl(34_18%_68%/0.34)] py-8 dark:border-[hsl(38_18%_58%/0.2)] md:mt-9 md:py-9 lg:py-10">
+          <h1 className="max-w-5xl font-serif text-[clamp(2.6rem,5.2vw,4.35rem)] font-medium leading-[1.02] tracking-normal text-balance text-[hsl(220_18%_14%/0.92)] dark:text-[hsl(42_31%_88%/0.94)]">
+            {copy.title}
+          </h1>
         </header>
 
         <section
           aria-labelledby={toolsHeadingId}
-          className="mt-16 md:mt-20"
+          className="mt-10 md:mt-12"
         >
           <div className="grid gap-5 md:grid-cols-[0.36fr_1fr] md:items-end md:gap-12">
             <div>
-              <p className="text-[0.72rem] uppercase text-[hsl(220_9%_34%/0.58)] dark:text-[hsl(42_18%_82%/0.58)]">
-                {copy.detailKicker}
-              </p>
               <h2
-                className="mt-3 font-serif text-[clamp(2rem,3.4vw,3rem)] font-medium leading-none tracking-normal"
+                className="font-serif text-[clamp(2rem,3.4vw,3rem)] font-medium leading-none tracking-normal"
                 id={toolsHeadingId}
               >
                 {pageCopy.toolsTitle}
@@ -146,11 +130,8 @@ export function SkillDetailPageContent({ slug }: SkillDetailPageContentProps) {
         >
           <div className="grid gap-5 md:grid-cols-[0.36fr_1fr] md:items-end md:gap-12">
             <div>
-              <p className="text-[0.72rem] uppercase text-[hsl(220_9%_34%/0.58)] dark:text-[hsl(42_18%_82%/0.58)]">
-                {copy.rubric}
-              </p>
               <h2
-                className="mt-3 font-serif text-[clamp(2rem,3.4vw,3rem)] font-medium leading-none tracking-normal"
+                className="font-serif text-[clamp(2rem,3.4vw,3rem)] font-medium leading-none tracking-normal"
                 id={capabilitiesHeadingId}
               >
                 {pageCopy.capabilitiesTitle}
