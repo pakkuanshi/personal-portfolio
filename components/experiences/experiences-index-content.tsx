@@ -12,6 +12,11 @@ type ExperiencesListContentProps = {
   categoryKey: ExperienceCategoryKey;
 };
 
+const indexCardBackgrounds = [
+  "bg-[hsl(42_33%_94%/0.92)] dark:bg-[hsl(32_13%_16%/0.84)]",
+  "bg-[hsl(48_25%_92%/0.9)] dark:bg-[hsl(34_12%_17%/0.84)]",
+];
+
 export function ExperiencesIndexContent() {
   const { locale } = usePreferences();
   const copy = experienceIndexContent[locale];
@@ -29,34 +34,34 @@ export function ExperiencesIndexContent() {
 
       <section
         aria-label={copy.eyebrow}
-        className="site-container mt-12 grid max-w-3xl gap-7 sm:mt-14 md:grid-cols-2 md:gap-10 lg:mt-16 lg:gap-12"
+        className="site-container mt-12 sm:mt-14 lg:mt-16"
       >
-        {selectors.map((selector) => {
-          const titleLines =
-            locale === "en" && selector.key === "professional"
-              ? selector.title.split(" ")
-              : [selector.title];
+        <div className="mx-auto grid w-full max-w-[592px] grid-cols-1 gap-4 sm:grid-cols-2">
+          {selectors.map((selector, index) => {
+            const titleLines =
+              locale === "en" && selector.key === "professional"
+                ? selector.title.split(" ")
+                : [selector.title];
+            const background =
+              indexCardBackgrounds[index] ?? indexCardBackgrounds[0];
 
-          return (
-            <Link
-              className="group relative flex aspect-[0.74] min-h-[280px] items-center justify-center overflow-hidden rounded-[1.05rem] border border-[hsl(34_22%_73%/0.5)] bg-[hsl(38_38%_90%)] px-7 shadow-[0_18px_44px_hsl(30_18%_20%/0.09)] transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[hsl(32_24%_56%/0.58)] hover:bg-[hsl(37_41%_87%)] hover:shadow-[0_24px_54px_hsl(30_18%_18%/0.13)] dark:border-[hsl(34_24%_70%/0.2)] dark:bg-[hsl(40_27%_79%)] dark:shadow-[0_24px_58px_hsl(18_34%_4%/0.45)] dark:hover:border-[hsl(36_32%_75%/0.42)] dark:hover:bg-[hsl(40_30%_82%)] dark:hover:shadow-[0_28px_68px_hsl(18_38%_4%/0.58)] sm:min-h-[310px] md:min-h-[340px] lg:min-h-[390px]"
-              href={selector.href}
-              key={selector.key}
-            >
-              <span className="sr-only">{selector.title}</span>
-              <span
-                aria-hidden="true"
-                className="flex flex-col items-center text-center font-serif text-[clamp(1.35rem,2.45vw,2.3rem)] leading-[1.12] text-[hsl(220_18%_16%/0.86)] transition-colors duration-300 group-hover:text-[hsl(220_18%_10%)] dark:text-[hsl(27_20%_16%/0.9)] dark:group-hover:text-[hsl(25_22%_10%)]"
+            return (
+              <Link
+                className={`group relative min-h-[13.25rem] overflow-hidden border border-[hsl(34_18%_68%/0.34)] p-6 text-[hsl(220_18%_12%/0.9)] shadow-[0_12px_28px_hsl(30_18%_28%/0.045)] transition duration-200 ease-out sm:aspect-[1.16/1] sm:min-h-0 lg:aspect-[1.22/1] ${background} hover:-translate-y-1 hover:border-[hsl(28_24%_52%/0.4)] hover:shadow-[0_18px_34px_hsl(30_18%_24%/0.1)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[hsl(28_24%_52%/0.45)] dark:border-[hsl(38_18%_58%/0.2)] dark:text-[hsl(42_28%_90%/0.9)] dark:hover:border-[hsl(38_22%_68%/0.3)] dark:hover:shadow-[0_18px_34px_hsl(24_12%_4%/0.26)]`}
+                href={selector.href}
+                key={selector.key}
               >
-                {titleLines.map((line) => (
-                  <span className="whitespace-nowrap" key={line}>
-                    {line}
-                  </span>
-                ))}
-              </span>
-            </Link>
-          );
-        })}
+                <h2 className="absolute bottom-6 left-6 right-8 font-serif text-[clamp(2.05rem,2.35vw,2.45rem)] font-medium leading-[0.94] tracking-normal text-balance">
+                  {titleLines.map((line) => (
+                    <span className="block" key={line}>
+                      {line}
+                    </span>
+                  ))}
+                </h2>
+              </Link>
+            );
+          })}
+        </div>
       </section>
     </div>
   );
