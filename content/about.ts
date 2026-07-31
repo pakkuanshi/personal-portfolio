@@ -1,4 +1,5 @@
 import type { Locale } from "@/types/preferences";
+import { RESUME_PDF_PATH } from "@/lib/resume-assets";
 
 type AboutInfoBlock = {
   label: string;
@@ -17,18 +18,18 @@ type AboutContent = {
   resumeHref: string;
   resumeRequest: {
     title: string;
-    versionPrompt: string;
     description: string;
+    firstNameLabel: string;
+    firstNamePlaceholder: string;
+    lastNameLabel: string;
+    lastNamePlaceholder: string;
     emailLabel: string;
     emailPlaceholder: string;
-    resumeVersions: {
-      id: "en" | "cn";
-      label: string;
-    }[];
     submitLabel: string;
     loadingLabel: string;
     successMessage: string;
     successDetail: string;
+    invalidEmailMessage: string;
     errorMessage: string;
     closeLabel: string;
   };
@@ -43,21 +44,22 @@ const enAboutContent: AboutContent = {
   portraitAlt: "Editorial portrait of Kristy Shi",
   portraitImage: "/images/about-portrait.jpg",
   resumeCta: "View Resume",
-  resumeHref: "/resume.pdf",
+  resumeHref: RESUME_PDF_PATH,
   resumeRequest: {
-    title: "RESUME",
-    versionPrompt: "Choose a version to receive",
-    description: "Enter your email to receive a selected PDF version of my resume.",
-    emailLabel: "Email",
+    title: "View My Resume",
+    description:
+      "Enter your email below to receive a copy of my resume. A PDF will also open automatically after submission.",
+    firstNameLabel: "First Name",
+    firstNamePlaceholder: "Optional",
+    lastNameLabel: "Last Name",
+    lastNamePlaceholder: "Optional",
+    emailLabel: "Email Address",
     emailPlaceholder: "Email address",
-    resumeVersions: [
-      { id: "en", label: "English Resume" },
-      { id: "cn", label: "中文简历" },
-    ],
-    submitLabel: "Send Resume",
+    submitLabel: "Send & View Resume",
     loadingLabel: "Sending...",
-    successMessage: "Resume sent successfully.",
-    successDetail: "Please check your inbox.",
+    successMessage: "✓ Resume sent successfully.",
+    successDetail: "Check your inbox for a copy of my resume.",
+    invalidEmailMessage: "Please enter a valid email address.",
     errorMessage: "Something went wrong. Please try again.",
     closeLabel: "Close",
   },
@@ -96,21 +98,21 @@ const zhHansAboutContent: AboutContent = {
   portraitAlt: "Kristy Shi 的编辑风格肖像",
   portraitImage: "/images/about-portrait.jpg",
   resumeCta: "获取简历",
-  resumeHref: "/resume.pdf",
+  resumeHref: RESUME_PDF_PATH,
   resumeRequest: {
-    title: "简历",
-    versionPrompt: "选择想获取的简历版本",
-    description: "输入邮箱后，即可收到对应版本的 PDF 简历。",
-    emailLabel: "邮箱",
+    title: "查看我的简历",
+    description: "输入邮箱后，我会将简历发送给你；提交成功后也会自动打开 PDF。",
+    firstNameLabel: "名字",
+    firstNamePlaceholder: "选填",
+    lastNameLabel: "姓氏",
+    lastNamePlaceholder: "选填",
+    emailLabel: "邮箱地址",
     emailPlaceholder: "邮箱地址",
-    resumeVersions: [
-      { id: "en", label: "English Resume" },
-      { id: "cn", label: "中文简历" },
-    ],
-    submitLabel: "发送简历",
+    submitLabel: "发送并查看简历",
     loadingLabel: "发送中...",
-    successMessage: "简历已发送成功。",
-    successDetail: "请查看你的邮箱。",
+    successMessage: "✓ 简历已发送成功。",
+    successDetail: "请查看你的邮箱，获取一份简历副本。",
+    invalidEmailMessage: "请输入有效的邮箱地址。",
     errorMessage: "Something went wrong. Please try again.",
     closeLabel: "关闭",
   },
@@ -146,21 +148,21 @@ const zhHantAboutContent: AboutContent = {
   portraitAlt: "Kristy Shi 的編輯風格肖像",
   portraitImage: "/images/about-portrait.jpg",
   resumeCta: "獲取簡歷",
-  resumeHref: "/resume.pdf",
+  resumeHref: RESUME_PDF_PATH,
   resumeRequest: {
-    title: "簡歷",
-    versionPrompt: "選擇想獲取的簡歷版本",
-    description: "輸入信箱後，即可收到對應版本的 PDF 簡歷。",
-    emailLabel: "信箱",
+    title: "查看我的簡歷",
+    description: "輸入信箱後，我會將簡歷發送給你；提交成功後也會自動打開 PDF。",
+    firstNameLabel: "名字",
+    firstNamePlaceholder: "選填",
+    lastNameLabel: "姓氏",
+    lastNamePlaceholder: "選填",
+    emailLabel: "信箱地址",
     emailPlaceholder: "信箱地址",
-    resumeVersions: [
-      { id: "en", label: "English Resume" },
-      { id: "cn", label: "中文簡歷" },
-    ],
-    submitLabel: "發送簡歷",
+    submitLabel: "發送並查看簡歷",
     loadingLabel: "發送中...",
-    successMessage: "簡歷已發送成功。",
-    successDetail: "請查看你的信箱。",
+    successMessage: "✓ 簡歷已發送成功。",
+    successDetail: "請查看你的信箱，獲取一份簡歷副本。",
+    invalidEmailMessage: "請輸入有效的信箱地址。",
     errorMessage: "Something went wrong. Please try again.",
     closeLabel: "關閉",
   },

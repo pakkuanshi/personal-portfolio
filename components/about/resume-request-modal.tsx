@@ -2,45 +2,49 @@
 
 import { ChangeEvent, FormEvent, useEffect, useId, useState } from "react";
 
-type ResumeLanguage = "en" | "cn";
-
-type ResumeRequestCopy = {
+type ResumeModalCopy = {
   title: string;
-  versionPrompt: string;
   description: string;
+  firstNameLabel: string;
+  firstNamePlaceholder: string;
+  lastNameLabel: string;
+  lastNamePlaceholder: string;
   emailLabel: string;
   emailPlaceholder: string;
-  resumeVersions: {
-    id: ResumeLanguage;
-    label: string;
-  }[];
   submitLabel: string;
   loadingLabel: string;
   successMessage: string;
   successDetail: string;
+  invalidEmailMessage: string;
   errorMessage: string;
   closeLabel: string;
 };
 
-type ResumeRequestModalProps = {
-  copy: ResumeRequestCopy;
+type ResumeModalProps = {
+  copy: ResumeModalCopy;
   isOpen: boolean;
   onClose: () => void;
+  resumeHref: string;
 };
 
-export function ResumeRequestModal({
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+export function ResumeModal({
   copy,
   isOpen,
   onClose,
-}: ResumeRequestModalProps) {
+  resumeHref,
+}: ResumeModalProps) {
   const descriptionId = useId();
   const emailId = useId();
+  const firstNameId = useId();
+  const lastNameId = useId();
   const titleId = useId();
-  const versionGroupId = useId();
   const [email, setEmail] = useState("");
-  const [selectedVersion, setSelectedVersion] = useState<ResumeLanguage>(
-    copy.resumeVersions[0]?.id ?? "en",
-  );
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
@@ -51,9 +55,11 @@ export function ResumeRequestModal({
       return;
     }
 
+    setEmail("");
+    setFirstName("");
+    setLastName("");
     setStatus("idle");
     setErrorMessage(copy.errorMessage);
-    setSelectedVersion(copy.resumeVersions[0]?.id ?? "en");
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -66,34 +72,48 @@ export function ResumeRequestModal({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [copy.errorMessage, copy.resumeVersions, isOpen, onClose]);
+  }, [copy.errorMessage, isOpen, onClose]);
 
   if (!isOpen) {
     return null;
   }
 
-  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+  const resetError = () => {
     if (status !== "loading") {
       setStatus("idle");
       setErrorMessage(copy.errorMessage);
     }
   };
 
-  const handleVersionChange = (version: ResumeLanguage) => {
-    setSelectedVersion(version);
-    if (status !== "loading") {
-      setStatus("idle");
-      setErrorMessage(copy.errorMessage);
-    }
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+    resetError();
+  };
+
+  const handleFirstNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFirstName(event.target.value);
+    resetError();
+  };
+
+  const handleLastNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setLastName(event.target.value);
+    resetError();
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const trimmedEmail = email.trim();
 
-    if (!event.currentTarget.reportValidity()) {
+    if (!isValidEmail(trimmedEmail)) {
+      setErrorMessage(copy.invalidEmailMessage);
+      setStatus("error");
       return;
+    }
+
+    const resumeWindow = window.open("about:blank", "_blank");
+
+    if (resumeWindow) {
+      resumeWindow.opener = null;
     }
 
     setStatus("loading");
@@ -102,7 +122,8 @@ export function ResumeRequestModal({
       const response = await fetch("/api/send-resume", {
         body: JSON.stringify({
           email: trimmedEmail,
-          resumeLanguage: selectedVersion,
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
         }),
         headers: {
           "Content-Type": "application/json",
@@ -111,21 +132,34 @@ export function ResumeRequestModal({
       });
 
       if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as {
-          error?: string;
-        } | null;
-        throw new Error(data?.error ?? copy.errorMessage);
+        throw new Error(copy.errorMessage);
+      }
+
+      const data = (await response.json().catch(() => null)) as {
+        resumeUrl?: string;
+      } | null;
+      const resumeUrl = data?.resumeUrl ?? resumeHref;
+      const absoluteResumeUrl = new URL(resumeUrl, window.location.origin).toString();
+
+      if (resumeWindow) {
+        resumeWindow.location.href = absoluteResumeUrl;
+      } else {
+        window.open(absoluteResumeUrl, "_blank", "noopener,noreferrer");
       }
 
       setEmail("");
+      setFirstName("");
+      setLastName("");
       setStatus("success");
-    } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : copy.errorMessage);
+    } catch {
+      resumeWindow?.close();
+      setErrorMessage(copy.errorMessage);
       setStatus("error");
     }
   };
 
   const isLoading = status === "loading";
+  const isSuccess = status === "success";
 
   return (
     <div className="resume-modal-layer">
@@ -156,68 +190,82 @@ export function ResumeRequestModal({
           <h2 className="resume-modal-title" id={titleId}>
             {copy.title}
           </h2>
-          <p className="resume-modal-version-title" id={versionGroupId}>
-            {copy.versionPrompt}
-          </p>
           <p className="resume-modal-description" id={descriptionId}>
             {copy.description}
           </p>
         </div>
 
-        <form className="resume-modal-form" onSubmit={handleSubmit}>
-          <div
-            aria-labelledby={versionGroupId}
-            className="resume-modal-version-group"
-            role="radiogroup"
-          >
-            {copy.resumeVersions.map((version) => (
-              <label className="resume-modal-version-option" key={version.id}>
-                <input
-                  checked={selectedVersion === version.id}
-                  disabled={isLoading}
-                  name="resume-version"
-                  onChange={() => handleVersionChange(version.id)}
-                  type="radio"
-                  value={version.id}
-                />
-                <span>{version.label}</span>
-              </label>
-            ))}
-          </div>
-
-          <label className="resume-modal-label" htmlFor={emailId}>
-            {copy.emailLabel}
-          </label>
-          <input
-            autoComplete="email"
-            className="resume-modal-input"
-            disabled={isLoading}
-            id={emailId}
-            inputMode="email"
-            onChange={handleEmailChange}
-            placeholder={copy.emailPlaceholder}
-            required
-            type="email"
-            value={email}
-          />
-          <button
-            aria-busy={isLoading}
-            className="resume-modal-submit"
-            disabled={isLoading}
-            type="submit"
-          >
-            {isLoading ? copy.loadingLabel : copy.submitLabel}
-          </button>
-        </form>
-
-        {status === "success" ? (
+        {isSuccess ? (
           <p className="resume-modal-success" role="status">
             <span>{copy.successMessage}</span>
             <span className="resume-modal-success-detail">
               {copy.successDetail}
             </span>
           </p>
-        ) : null}
+        ) : (
+          <form className="resume-modal-form" onSubmit={handleSubmit}>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-2">
+                <label className="resume-modal-label" htmlFor={firstNameId}>
+                  {copy.firstNameLabel}
+                </label>
+                <input
+                  autoComplete="given-name"
+                  className="resume-modal-input"
+                  disabled={isLoading}
+                  id={firstNameId}
+                  onChange={handleFirstNameChange}
+                  placeholder={copy.firstNamePlaceholder}
+                  type="text"
+                  value={firstName}
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <label className="resume-modal-label" htmlFor={lastNameId}>
+                  {copy.lastNameLabel}
+                </label>
+                <input
+                  autoComplete="family-name"
+                  className="resume-modal-input"
+                  disabled={isLoading}
+                  id={lastNameId}
+                  onChange={handleLastNameChange}
+                  placeholder={copy.lastNamePlaceholder}
+                  type="text"
+                  value={lastName}
+                />
+              </div>
+            </div>
+
+            <div className="grid gap-2">
+              <label className="resume-modal-label" htmlFor={emailId}>
+                {copy.emailLabel}
+              </label>
+              <input
+                autoComplete="email"
+                className="resume-modal-input"
+                disabled={isLoading}
+                id={emailId}
+                inputMode="email"
+                onChange={handleEmailChange}
+                placeholder={copy.emailPlaceholder}
+                required
+                type="email"
+                value={email}
+              />
+            </div>
+
+            <button
+              aria-busy={isLoading}
+              className="resume-modal-submit"
+              disabled={isLoading}
+              type="submit"
+            >
+              {isLoading ? copy.loadingLabel : copy.submitLabel}
+            </button>
+          </form>
+        )}
 
         {status === "error" ? (
           <p className="resume-modal-error" role="alert">

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
+import { ResumeModal } from "@/components/about/resume-request-modal";
 import { usePreferences } from "@/components/preferences/preferences-provider";
 import { aboutContent } from "@/content/about";
 
@@ -10,6 +10,7 @@ export function AboutPageContent() {
   const { locale } = usePreferences();
   const copy = aboutContent[locale];
   const [portraitLoaded, setPortraitLoaded] = useState(true);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
   const leftInfoBlocks = copy.infoBlocks.slice(0, 2);
   const rightInfoBlocks = copy.infoBlocks.slice(2);
 
@@ -25,9 +26,10 @@ export function AboutPageContent() {
               <span key={line}>{line}</span>
             ))}
           </h1>
-          <Link
-            className="group mt-8 inline-flex w-fit items-center gap-2 border border-[hsl(34_18%_68%/0.38)] px-4 py-2.5 text-sm leading-none text-[hsl(220_16%_14%/0.74)] transition-colors duration-200 hover:border-[hsl(28_24%_52%/0.46)] hover:text-[hsl(220_18%_10%/0.92)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[hsl(28_24%_52%/0.45)] dark:border-[hsl(38_18%_58%/0.24)] dark:text-[hsl(42_24%_86%/0.74)] dark:hover:border-[hsl(38_24%_74%/0.34)] dark:hover:text-[hsl(42_30%_94%/0.92)]"
-            href="/resume"
+          <button
+            className="group mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-[hsl(34_18%_68%/0.38)] bg-[hsl(42_34%_94%/0.58)] px-4 py-2.5 text-sm leading-none text-[hsl(220_16%_14%/0.74)] transition-colors duration-200 hover:border-[hsl(28_24%_52%/0.46)] hover:bg-[hsl(38_30%_88%/0.7)] hover:text-[hsl(220_18%_10%/0.92)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[hsl(28_24%_52%/0.45)] dark:border-[hsl(38_18%_58%/0.24)] dark:bg-[hsl(30_13%_13%/0.48)] dark:text-[hsl(42_24%_86%/0.74)] dark:hover:border-[hsl(38_24%_74%/0.34)] dark:hover:bg-[hsl(30_14%_19%/0.64)] dark:hover:text-[hsl(42_30%_94%/0.92)]"
+            onClick={() => setResumeModalOpen(true)}
+            type="button"
           >
             {copy.resumeCta}
             <span
@@ -36,7 +38,7 @@ export function AboutPageContent() {
             >
               ↗
             </span>
-          </Link>
+          </button>
         </div>
 
         <div className="about-page-portrait" aria-label={copy.portraitAlt}>
@@ -104,6 +106,22 @@ export function AboutPageContent() {
           </div>
         </div>
       </section>
+
+      <button
+        className="about-page-resume-cta"
+        onClick={() => setResumeModalOpen(true)}
+        type="button"
+      >
+        {copy.resumeCta}
+        <span aria-hidden="true">↗</span>
+      </button>
+
+      <ResumeModal
+        copy={copy.resumeRequest}
+        isOpen={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+        resumeHref={copy.resumeHref}
+      />
     </main>
   );
 }

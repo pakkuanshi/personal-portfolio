@@ -1,79 +1,36 @@
 import { NextResponse } from "next/server";
 
-type ResumeLanguage = "en" | "cn";
+import { RESUME_PDF_PATH } from "@/lib/resume-assets";
+import { sendResumeEmail } from "@/lib/resume-email";
+import { createResumeLead, saveResumeLead } from "@/lib/resume-leads";
 
 export const runtime = "nodejs";
 
-const resendEndpoint = "https://api.resend.com/emails";
-const resumeLinks: Record<ResumeLanguage, string> = {
-  cn: "/resume-cn.pdf",
-  en: "/resume-en.pdf",
-};
-
-function isResumeLanguage(value: unknown): value is ResumeLanguage {
-  return value === "en" || value === "cn";
-}
+const invalidEmailMessage = "Please enter a valid email address.";
+const genericErrorMessage = "Something went wrong. Please try again.";
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function getResumeLabel(resumeLanguage: ResumeLanguage) {
-  return resumeLanguage === "en" ? "English resume" : "Chinese resume";
-}
+function getStringField(payload: unknown, key: string) {
+  if (typeof payload === "object" && payload !== null) {
+    const value = (payload as Record<string, unknown>)[key];
 
-function buildEmailBody(resumeUrl: string, resumeLanguage: ResumeLanguage) {
-  const resumeLabel = getResumeLabel(resumeLanguage);
-
-  return {
-    html: `
-      <div style="font-family: Arial, sans-serif; color: #1f1f1f; line-height: 1.6;">
-        <p>Hello,</p>
-        <p>Thank you for your interest in my work. You can view and download my ${resumeLabel} using the link below:</p>
-        <p><a href="${resumeUrl}" style="color: #1f1f1f;">${resumeUrl}</a></p>
-        <p>Best,<br />Kristy Shi</p>
-      </div>
-    `,
-    text: [
-      "Hello,",
-      "",
-      `Thank you for your interest in my work. You can view and download my ${resumeLabel} using the link below:`,
-      resumeUrl,
-      "",
-      "Best,",
-      "Kristy Shi",
-    ].join("\n"),
-  };
-}
-
-async function readResendError(response: Response) {
-  const fallbackMessage = `Resend request failed with status ${response.status}.`;
-
-  try {
-    const text = await response.text();
-
-    if (!text) {
-      return fallbackMessage;
+    if (typeof value === "string") {
+      return value.trim();
     }
-
-    const data = JSON.parse(text) as {
-      error?: string | { message?: string };
-      message?: string;
-      name?: string;
-    };
-
-    if (typeof data.error === "object" && data.error?.message) {
-      return data.error.message;
-    }
-
-    if (typeof data.error === "string") {
-      return data.error;
-    }
-
-    return data.message ?? data.name ?? text;
-  } catch {
-    return fallbackMessage;
   }
+
+  return "";
+}
+
+function getOptionalName(payload: unknown, key: string) {
+  const value = getStringField(payload, key)
+    .replace(/\s+/g, " ")
+    .slice(0, 80);
+
+  return value || undefined;
 }
 
 export async function POST(request: Request) {
@@ -87,117 +44,33 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const email =
-    typeof payload === "object" &&
-    payload !== null &&
-    "email" in payload &&
-    typeof payload.email === "string"
-      ? payload.email.trim()
-      : "";
+  const email = getStringField(payload, "email").toLowerCase();
 
-  const resumeLanguage =
-    typeof payload === "object" && payload !== null && "resumeLanguage" in payload
-      ? payload.resumeLanguage
-      : undefined;
-
-  console.error("[send-resume] Incoming request.", {
-    emailReceived: Boolean(email),
-    hasApiKey: Boolean(process.env.RESEND_API_KEY),
-    resumeLanguage,
-  });
-
-  if (!isValidEmail(email) || !isResumeLanguage(resumeLanguage)) {
-    console.error("[send-resume] Invalid request fields.", {
-      emailReceived: Boolean(email),
-      isValidEmail: isValidEmail(email),
-      isValidResumeLanguage: isResumeLanguage(resumeLanguage),
-      resumeLanguage,
-    });
-
-    return NextResponse.json(
-      {
-        error:
-          "Invalid resume request. Expected email and resumeLanguage with value en or cn.",
-      },
-      { status: 400 },
-    );
+  if (!isValidEmail(email)) {
+    return NextResponse.json({ error: invalidEmailMessage }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-
-  if (!apiKey) {
-    console.error("[send-resume] Missing RESEND_API_KEY.", {
-      hasApiKey: false,
-    });
-
-    return NextResponse.json(
-      { error: "Resume email service is not configured." },
-      { status: 500 },
-    );
-  }
-
-  const resumeUrl = new URL(resumeLinks[resumeLanguage], request.url).toString();
-  const emailBody = buildEmailBody(resumeUrl, resumeLanguage);
-
-  console.error("[send-resume] Prepared resume email.", {
-    hasApiKey: true,
-    resumeLanguage,
-    resumeUrl,
+  const lead = createResumeLead({
+    email,
+    firstName: getOptionalName(payload, "firstName"),
+    lastName: getOptionalName(payload, "lastName"),
   });
-
-  let resendResponse: Response;
 
   try {
-    resendResponse = await fetch(resendEndpoint, {
-      body: JSON.stringify({
-        from: "Kristy Shi <onboarding@resend.dev>",
-        html: emailBody.html,
-        subject: "Kristy Shi_Resume",
-        text: emailBody.text,
-        to: email,
-      }),
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      method: "POST",
+    await saveResumeLead(lead);
+    await sendResumeEmail({ to: email });
+
+    return NextResponse.json({
+      ok: true,
+      resumeUrl: RESUME_PDF_PATH,
     });
   } catch (error) {
-    console.error("[send-resume] Resend network request failed.", {
+    console.error("[send-resume] Resume request failed.", {
+      email,
       error,
-      hasApiKey: true,
-      resumeLanguage,
-      resumeUrl,
+      timestamp: lead.timestamp,
     });
 
-    return NextResponse.json(
-      { error: "Resend network request failed." },
-      { status: 502 },
-    );
+    return NextResponse.json({ error: genericErrorMessage }, { status: 502 });
   }
-
-  if (!resendResponse.ok) {
-    const resendError = await readResendError(resendResponse);
-
-    console.error("[send-resume] Resend API error.", {
-      hasApiKey: true,
-      resendError,
-      resendStatus: resendResponse.status,
-      resumeLanguage,
-      resumeUrl,
-    });
-
-    return NextResponse.json(
-      { error: resendError },
-      { status: 502 },
-    );
-  }
-
-  console.error("[send-resume] Resume email sent.", {
-    hasApiKey: true,
-    resumeLanguage,
-    resumeUrl,
-  });
-
-  return NextResponse.json({ ok: true });
 }
