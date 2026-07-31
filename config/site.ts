@@ -3,7 +3,7 @@ import type { SiteConfig } from "@/types/site";
 export const siteConfig: SiteConfig = {
   name: "Kristy Shi",
   role: "Marketing & Strategic Communication",
-  email: "Pakkuanshi@gmail.com",
+  email: "pakkuanshi@gmail.com",
   navigation: [
     { href: "/", key: "home" },
     {

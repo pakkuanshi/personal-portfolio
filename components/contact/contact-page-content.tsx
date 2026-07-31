@@ -20,7 +20,7 @@ function ContactValue({ item }: { item: ContactItem }) {
         rel={item.newTab ? "noopener noreferrer" : undefined}
         target={item.newTab ? "_blank" : undefined}
       >
-        <span className="break-all">{item.value}</span>
+        <span className="break-words">{item.value}</span>
       </Link>
     );
   }
@@ -48,8 +48,8 @@ export function ContactPageContent() {
 
   return (
     <section className="-mt-[7rem] min-h-screen bg-[hsl(38_30%_94%)] pt-[7rem] text-[hsl(220_18%_12%)] transition-colors duration-200 dark:bg-[hsl(30_14%_11%)] dark:text-[hsl(42_28%_90%)] lg:-mt-[3.25rem] lg:pt-[3.25rem]">
-      <div className="site-container grid min-h-[calc(100svh-3.25rem)] content-center gap-14 py-14 md:gap-16 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.36fr)_minmax(18rem,1fr)] lg:gap-16 xl:gap-24">
+      <div className="site-container grid min-h-[calc(100svh-3.25rem)] content-center py-14 md:py-20">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,1.36fr)_minmax(18rem,1fr)] lg:gap-16 xl:gap-24">
           <header className="max-w-4xl">
             <p className="text-xs font-semibold uppercase leading-none text-[hsl(220_9%_34%/0.62)] dark:text-[hsl(38_14%_68%/0.62)]">
               {copy.eyebrow}
@@ -62,9 +62,9 @@ export function ContactPageContent() {
             </p>
           </header>
 
-          <div className="grid content-start gap-9 lg:pt-8">
+          <div className="grid content-start gap-12 lg:pt-8">
             {copy.items.map((item) => (
-              <section className="grid gap-3" key={item.label}>
+              <section className="grid gap-4" key={item.label}>
                 <p className="text-xs font-semibold uppercase leading-none text-[hsl(220_9%_34%/0.62)] dark:text-[hsl(38_14%_68%/0.62)]">
                   {item.label}
                 </p>
@@ -73,10 +73,6 @@ export function ContactPageContent() {
             ))}
           </div>
         </div>
-
-        <p className="border-t border-[hsl(34_18%_68%/0.34)] pt-8 font-serif text-[clamp(1.35rem,2.2vw,2.05rem)] leading-[1.14] tracking-normal text-[hsl(220_18%_12%/0.86)] dark:border-[hsl(32_12%_30%/0.55)] dark:text-[hsl(42_28%_90%/0.86)]">
-          {copy.closing}
-        </p>
       </div>
     </section>
   );
