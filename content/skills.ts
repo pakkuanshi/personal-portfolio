@@ -18,6 +18,24 @@ export type SkillDetail = {
   description: string;
 };
 
+export type SkillToolIcon =
+  | "advertising"
+  | "analytics"
+  | "automation"
+  | "content"
+  | "data"
+  | "document"
+  | "research"
+  | "search"
+  | "strategy"
+  | "web";
+
+export type SkillTool = {
+  name: string;
+  description: string;
+  icon?: SkillToolIcon;
+};
+
 export type SkillCategoryCopy = {
   title: string;
   titleLines: string[];
@@ -25,6 +43,7 @@ export type SkillCategoryCopy = {
   note: string;
   folio: string;
   summary: string;
+  tools: SkillTool[];
   detailKicker: string;
   details: SkillDetail[];
 };
@@ -72,6 +91,45 @@ export const skillsPageCopy: Record<
   },
 };
 
+export const skillsDetailPageCopy: Record<
+  Locale,
+  {
+    backLabel: string;
+    toolsTitle: string;
+    toolsDescription: string;
+    capabilitiesTitle: string;
+    capabilitiesDescription: string;
+  }
+> = {
+  en: {
+    backLabel: "Skills Index",
+    toolsTitle: "Core Tools",
+    toolsDescription:
+      "The platforms, systems, and working tools I use to turn strategy into practical execution.",
+    capabilitiesTitle: "What I Do",
+    capabilitiesDescription:
+      "The practical capabilities behind this area of work, from planning and setup to analysis and refinement.",
+  },
+  "zh-CN": {
+    backLabel: "技能索引",
+    toolsTitle: "核心工具",
+    toolsDescription:
+      "我用来把策略转化为实际执行的平台、系统与工作工具。",
+    capabilitiesTitle: "我能做什么",
+    capabilitiesDescription:
+      "这个能力领域中的实际工作内容，从规划、搭建到分析与优化。",
+  },
+  "zh-TW": {
+    backLabel: "技能索引",
+    toolsTitle: "核心工具",
+    toolsDescription:
+      "我用來把策略轉化為實際執行的平台、系統與工作工具。",
+    capabilitiesTitle: "我能做什麼",
+    capabilitiesDescription:
+      "這個能力領域中的實際工作內容，從規劃、搭建到分析與優化。",
+  },
+};
+
 const categoryCopy = (
   copy: SkillCategoryCopy,
   zhHans?: Partial<SkillCategoryCopy>,
@@ -104,7 +162,33 @@ export const skillCategories: SkillCategory[] = [
       note: "Budget, audience, and message architecture for measurable acquisition.",
       folio: "Acquisition / Testing / Scale",
       summary:
-        "Campaign structures, channel planning, paid social, search, and conversion-focused media systems.",
+        "Performance marketing is the paid acquisition practice behind campaigns that need clear targeting, measurable spend, and accountable conversion paths. I use it to connect audience strategy with channel setup, testing, and performance analysis.",
+      tools: [
+        {
+          name: "Google Ads",
+          description:
+            "Search campaign management, keyword optimization, and performance measurement.",
+          icon: "advertising",
+        },
+        {
+          name: "Meta Ads",
+          description:
+            "Paid social audience testing, creative iteration, and conversion-focused campaign setup.",
+          icon: "advertising",
+        },
+        {
+          name: "YouTube Ads",
+          description:
+            "Video campaign planning, audience reach, and performance review across awareness and conversion goals.",
+          icon: "content",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "Traffic, conversion, and campaign quality analysis across paid media journeys.",
+          icon: "analytics",
+        },
+      ],
       detailKicker: "Acquisition practice",
       details: [
         {
@@ -159,7 +243,39 @@ export const skillCategories: SkillCategory[] = [
       note: "A clean reading system for the decisions that shape growth.",
       folio: "Attribution / Dashboards / Insight",
       summary:
-        "Measurement strategy, dashboards, funnel analysis, attribution thinking, and campaign reporting.",
+        "Marketing analytics turns campaign activity into evidence for decisions. I use it to build reporting logic, interpret performance signals, and translate data into next-step recommendations.",
+      tools: [
+        {
+          name: "SQL",
+          description:
+            "Marketing data querying, reporting, and campaign performance analysis.",
+          icon: "data",
+        },
+        {
+          name: "Python",
+          description:
+            "Data cleaning, lightweight analysis, and repeatable reporting workflows.",
+          icon: "automation",
+        },
+        {
+          name: "R language",
+          description:
+            "Statistical analysis, structured exploration, and research-oriented data review.",
+          icon: "analytics",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "Traffic source analysis, conversion review, and audience behavior reporting.",
+          icon: "analytics",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "Insight documentation, reporting tables, and stakeholder-ready analysis decks.",
+          icon: "document",
+        },
+      ],
       detailKicker: "Measurement practice",
       details: [
         {
@@ -214,7 +330,33 @@ export const skillCategories: SkillCategory[] = [
       note: "Search visibility, content intent, and compounding discovery loops.",
       folio: "Search / Content / CRO",
       summary:
-        "Organic growth strategy, technical SEO review, content planning, and conversion experiments.",
+        "Search and growth work connects organic visibility with content, site structure, and conversion paths. I use it to identify demand, improve pages, and build compounding discovery systems.",
+      tools: [
+        {
+          name: "Semrush",
+          description:
+            "Keyword research, competitor analysis, and SEO opportunity discovery.",
+          icon: "search",
+        },
+        {
+          name: "Google Search Console",
+          description:
+            "Search performance review, indexing checks, and query-level optimization.",
+          icon: "search",
+        },
+        {
+          name: "Google Analytics",
+          description:
+            "Organic traffic behavior, conversion paths, and landing page performance analysis.",
+          icon: "analytics",
+        },
+        {
+          name: "WordPress",
+          description:
+            "Content publishing, on-page updates, metadata edits, and site structure support.",
+          icon: "web",
+        },
+      ],
       detailKicker: "Organic growth practice",
       details: [
         {
@@ -269,7 +411,33 @@ export const skillCategories: SkillCategory[] = [
       note: "Market context, audience intelligence, and the argument behind the work.",
       folio: "Audience / Market / Narrative",
       summary:
-        "Research synthesis, competitor review, positioning, journey mapping, and campaign strategy.",
+        "Strategy and insights work defines the argument behind campaigns before execution begins. I use research, audience context, and competitive signals to shape positioning, messaging, and planning decisions.",
+      tools: [
+        {
+          name: "Desk Research",
+          description:
+            "Market, audience, and competitor context gathering before strategy decisions.",
+          icon: "research",
+        },
+        {
+          name: "Google Forms",
+          description:
+            "Lightweight survey collection, audience feedback, and structured response review.",
+          icon: "document",
+        },
+        {
+          name: "Google Trends",
+          description:
+            "Demand pattern review, topic validation, and cultural timing checks.",
+          icon: "search",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "Planning documents, research synthesis, and presentation-ready strategy narratives.",
+          icon: "strategy",
+        },
+      ],
       detailKicker: "Strategy practice",
       details: [
         {
@@ -324,7 +492,33 @@ export const skillCategories: SkillCategory[] = [
       note: "Landing pages, workflows, and quiet infrastructure behind better marketing.",
       folio: "Pages / Forms / Flows",
       summary:
-        "Marketing sites, landing pages, forms, lightweight automations, integrations, and operational workflows.",
+        "Web and AI automation supports the systems behind cleaner marketing operations. I use it to build pages, organize workflows, and reduce repetitive work across content, forms, and data handoffs.",
+      tools: [
+        {
+          name: "WordPress",
+          description:
+            "Marketing page updates, CMS organization, and campaign-ready content publishing.",
+          icon: "web",
+        },
+        {
+          name: "Python",
+          description:
+            "Lightweight scripts for data cleanup, repetitive tasks, and workflow support.",
+          icon: "automation",
+        },
+        {
+          name: "AI Assistants",
+          description:
+            "Drafting support, workflow ideation, content operations, and structured task acceleration.",
+          icon: "automation",
+        },
+        {
+          name: "Form Workflows",
+          description:
+            "Submission routing, lead capture structure, and follow-up process organization.",
+          icon: "document",
+        },
+      ],
       detailKicker: "Systems practice",
       details: [
         {
@@ -379,7 +573,33 @@ export const skillCategories: SkillCategory[] = [
       note: "Copy, concepts, and assets shaped for attention, clarity, and brand memory.",
       folio: "Copy / Concepts / Assets",
       summary:
-        "Creative briefs, campaign concepts, copywriting, production coordination, and asset QA.",
+        "Creative and content work turns strategy into messages, concepts, and assets people can actually engage with. I use it to shape campaigns, write copy, coordinate production, and evaluate creative performance.",
+      tools: [
+        {
+          name: "Canva",
+          description:
+            "Fast visual layouts, campaign assets, and presentation-ready creative drafts.",
+          icon: "content",
+        },
+        {
+          name: "CapCut",
+          description:
+            "Short-form video editing, social content assembly, and lightweight motion edits.",
+          icon: "content",
+        },
+        {
+          name: "Final Cut Pro",
+          description:
+            "Video editing, timeline refinement, and polished campaign content production.",
+          icon: "content",
+        },
+        {
+          name: "Microsoft Office",
+          description:
+            "Creative briefs, copy drafts, content calendars, and stakeholder review documents.",
+          icon: "document",
+        },
+      ],
       detailKicker: "Production practice",
       details: [
         {
