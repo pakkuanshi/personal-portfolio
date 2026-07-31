@@ -9,6 +9,7 @@ type ContactLinkItem = {
 
 type ContactTextItem = {
   label: string;
+  note?: string;
   value: string | string[];
 };
 
@@ -41,7 +42,8 @@ export const contactContent: Record<Locale, ContactContent> = {
       },
       {
         label: "Based in",
-        value: ["Madison, WI", "Open to relocation and full-time opportunities."],
+        note: "Open to relocation and full-time opportunities.",
+        value: ["Madison, WI", "Macao", "Hong Kong", "Mainland China"],
       },
     ],
   },
@@ -64,7 +66,8 @@ export const contactContent: Record<Locale, ContactContent> = {
       },
       {
         label: "Based in",
-        value: ["Madison, WI", "Open to relocation and full-time opportunities."],
+        note: "Open to relocation and full-time opportunities.",
+        value: ["Madison, WI", "Macao", "Hong Kong", "Mainland China"],
       },
     ],
   },
@@ -87,7 +90,8 @@ export const contactContent: Record<Locale, ContactContent> = {
       },
       {
         label: "Based in",
-        value: ["Madison, WI", "Open to relocation and full-time opportunities."],
+        note: "Open to relocation and full-time opportunities.",
+        value: ["Madison, WI", "Macao", "Hong Kong", "Mainland China"],
       },
     ],
   },

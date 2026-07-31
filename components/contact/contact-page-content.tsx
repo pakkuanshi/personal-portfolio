@@ -31,6 +31,7 @@ function ContactValue({ item }: { item: ContactItem }) {
         {item.value.map((line) => (
           <p key={line}>{line}</p>
         ))}
+        {item.note ? <p className="mt-3 max-w-xl">{item.note}</p> : null}
       </div>
     );
   }
